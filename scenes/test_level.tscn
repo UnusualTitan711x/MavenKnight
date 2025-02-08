@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5khw0qmai6vj"]
+
+[ext_resource type="ArrayMesh" uid="uid://30j78ph0ih8k" path="res://assets/OBJ format/floor-small-square.obj" id="1_t0hne"]
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="Floor-small-square" type="MeshInstance3D" parent="."]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+mesh = ExtResource("1_t0hne")

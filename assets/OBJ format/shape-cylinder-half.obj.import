@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dbjek7suqcne6"
+path="res://.godot/imported/shape-cylinder-half.obj-825c8a0a6e7f01aec977eb6290fd6dda.mesh"
+
+[deps]
+
+files=["res://.godot/imported/shape-cylinder-half.obj-825c8a0a6e7f01aec977eb6290fd6dda.mesh"]
+
+source_file="res://assets/OBJ format/shape-cylinder-half.obj"
+dest_files=["res://.godot/imported/shape-cylinder-half.obj-825c8a0a6e7f01aec977eb6290fd6dda.mesh", "res://.godot/imported/shape-cylinder-half.obj-825c8a0a6e7f01aec977eb6290fd6dda.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

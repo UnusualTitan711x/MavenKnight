@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://672eb2w2l0hp"
+path="res://.godot/imported/door-sliding.obj-a29897bd19ff7ccc55066252eca7ee38.mesh"
+
+[deps]
+
+files=["res://.godot/imported/door-sliding.obj-a29897bd19ff7ccc55066252eca7ee38.mesh"]
+
+source_file="res://assets/OBJ format/door-sliding.obj"
+dest_files=["res://.godot/imported/door-sliding.obj-a29897bd19ff7ccc55066252eca7ee38.mesh", "res://.godot/imported/door-sliding.obj-a29897bd19ff7ccc55066252eca7ee38.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

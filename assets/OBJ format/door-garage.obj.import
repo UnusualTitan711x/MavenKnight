@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dbv3xxvhny066"
+path="res://.godot/imported/door-garage.obj-d0028043d378ac5fb24b2d3e85a1a749.mesh"
+
+[deps]
+
+files=["res://.godot/imported/door-garage.obj-d0028043d378ac5fb24b2d3e85a1a749.mesh"]
+
+source_file="res://assets/OBJ format/door-garage.obj"
+dest_files=["res://.godot/imported/door-garage.obj-d0028043d378ac5fb24b2d3e85a1a749.mesh", "res://.godot/imported/door-garage.obj-d0028043d378ac5fb24b2d3e85a1a749.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
