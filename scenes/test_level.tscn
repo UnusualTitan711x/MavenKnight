@@ -15,11 +15,6 @@ sky = SubResource("Sky_7rt32")
 
 [node name="TestLevel" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("2_iswua")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1.34844, -5)
-movement_speed = 12.0
-gravity = -31.0
-
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("2_188jy")
 data = {
@@ -32,3 +27,6 @@ transform = Transform3D(0.980824, 0.0050443, 0.194833, -0.193401, -0.0984643, 0.
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5kuv6")
+
+[node name="Player" parent="." instance=ExtResource("2_iswua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03367, 4.76837e-07, -0.698538)

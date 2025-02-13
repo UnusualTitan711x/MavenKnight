@@ -6,6 +6,9 @@ extends CharacterBody3D
 @export var gravity = -30.0
 
 @onready var camera = %Camera3D
+@onready var animator = $Graphics/Knight/AnimationPlayer
+
+@export var camera_speed = 10.0
 
 var last_move_direction = Vector3.BACK
 
@@ -34,6 +37,11 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.y = y_velocity + gravity * delta
 	
+	if movement_direction.length() < 0.2:
+		animator.play("Idle")
+	else:
+		animator.play("Running_B")
+	
 	move_and_slide()
 	
 	if movement_direction.length() > 0.2:
@@ -42,4 +50,4 @@ func _physics_process(delta: float) -> void:
 	global_rotation.y = lerp_angle(rotation.y, target_angle, rotation_speed * delta)
 	pass
 	
-	$CameraHolder.position = position
+	$CameraHolder.position = lerp($CameraHolder.position, position, camera_speed * delta)
