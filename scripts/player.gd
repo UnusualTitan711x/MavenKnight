@@ -11,6 +11,7 @@ extends CharacterBody3D
 @export var camera_speed = 10.0
 
 var last_move_direction = Vector3.BACK
+var movement_direction:Vector3
 
 func _physics_process(delta: float) -> void:
 	
@@ -22,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	var right = camera.global_basis.x
 	
 	# Determine the move direction from those
-	var movement_direction:Vector3 = forward * raw_input.y + right * raw_input.x
+	movement_direction = forward * raw_input.y + right * raw_input.x
 	
 	movement_direction.y = 0 # To avoid player moving into the ground
 	
@@ -32,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	var y_velocity = velocity.y
 	velocity.y = 0
 	
-	# Use velocity move towards to move the player
+	# Use velocity to move the player
 	velocity = movement_direction * movement_speed
 	
 	velocity.y = y_velocity + gravity * delta
@@ -44,6 +45,10 @@ func _physics_process(delta: float) -> void:
 		cur_anim = RUN
 		handle_animations()
 	
+	if Input.is_action_just_pressed("dash"):
+		dash()
+		move_and_slide()
+	
 	move_and_slide()
 	
 	if movement_direction.length() > 0.2:
@@ -54,6 +59,13 @@ func _physics_process(delta: float) -> void:
 	
 	$CameraHolder.position = lerp($CameraHolder.position, position, camera_speed * delta)
 	
+func dash():
+	if movement_direction.length() > 0.2:
+		movement_speed *= 2.5
+		anim_tree.set("parameters/Dash/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+		await get_tree().create_timer(.4).timeout
+		movement_speed /= 2.5
+
 #-------------------------------------------------------------------------------------------
 #              ANIMATION
 #-------------------------------------------------------------------------------------------
