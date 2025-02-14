@@ -6,7 +6,7 @@ extends CharacterBody3D
 @export var gravity = -30.0
 
 @onready var camera = %Camera3D
-@onready var animator = $Graphics/Knight/AnimationPlayer
+@onready var anim_tree: AnimationTree = $Graphics/Knight/AnimationTree
 
 @export var camera_speed = 10.0
 
@@ -38,9 +38,11 @@ func _physics_process(delta: float) -> void:
 	velocity.y = y_velocity + gravity * delta
 	
 	if movement_direction.length() < 0.2:
-		animator.play("Idle")
+		cur_anim = IDLE
+		handle_animations()
 	else:
-		animator.play("Running_B")
+		cur_anim = RUN
+		handle_animations()
 	
 	move_and_slide()
 	
@@ -51,3 +53,17 @@ func _physics_process(delta: float) -> void:
 	pass
 	
 	$CameraHolder.position = lerp($CameraHolder.position, position, camera_speed * delta)
+	
+#-------------------------------------------------------------------------------------------
+#              ANIMATION
+#-------------------------------------------------------------------------------------------
+enum {IDLE, RUN}
+var cur_anim = IDLE # Current animation
+	
+func handle_animations():
+	match cur_anim:
+		IDLE:
+			anim_tree.set("parameters/Movement/transition_request","Idle") 
+		RUN:
+			anim_tree.set("parameters/Movement/transition_request","Run") 
+		
