@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var movement_speed = 8.0
 @export var rotation_speed = 12.0
 @export var gravity = -30.0
+@export var dash_cooldown = 1.0
 
 @onready var camera = %Camera3D
 @onready var anim_tree: AnimationTree = $Graphics/Knight/AnimationTree
@@ -12,6 +13,9 @@ extends CharacterBody3D
 
 var last_move_direction = Vector3.BACK
 var movement_direction:Vector3
+var is_dashing: bool = false
+var dash_wait = 0
+
 
 func _physics_process(delta: float) -> void:
 	
@@ -34,48 +38,40 @@ func _physics_process(delta: float) -> void:
 	velocity.y = 0
 	
 	# Use velocity to move the player
-	velocity = movement_direction * movement_speed
+	if !is_dashing:
+		velocity = movement_direction * movement_speed
 	
 	velocity.y = y_velocity + gravity * delta
 	
-	if movement_direction.length() < 0.2:
-		cur_anim = IDLE
-		handle_animations()
-	else:
-		cur_anim = RUN
-		handle_animations()
+	var idle = !movement_direction.length()
 	
-	if Input.is_action_just_pressed("dash"):
+	anim_tree.set("parameters/conditions/idle", idle)
+	anim_tree.set("parameters/conditions/run", !idle)
+	anim_tree.set("parameters/conditions/attack", Input.is_action_just_pressed("attack"))
+	
+	if Input.is_action_just_pressed("dash") and dash_wait <= 0:
 		dash()
-		move_and_slide()
+	else:
+		dash_wait -= delta
 	
 	move_and_slide()
 	
 	if movement_direction.length() > 0.2:
 		last_move_direction = movement_direction
 	var target_angle = Vector3.BACK.signed_angle_to(last_move_direction, Vector3.UP)
-	global_rotation.y = lerp_angle(rotation.y, target_angle, rotation_speed * delta)
-	pass
+	if !is_dashing:
+		global_rotation.y = lerp_angle(rotation.y, target_angle, rotation_speed * delta)
+	
 	
 	$CameraHolder.position = lerp($CameraHolder.position, position, camera_speed * delta)
-	
+
+
 func dash():
 	if movement_direction.length() > 0.2:
-		movement_speed *= 2.5
-		anim_tree.set("parameters/Dash/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-		await get_tree().create_timer(.4).timeout
-		movement_speed /= 2.5
-
-#-------------------------------------------------------------------------------------------
-#              ANIMATION
-#-------------------------------------------------------------------------------------------
-enum {IDLE, RUN}
-var cur_anim = IDLE # Current animation
-	
-func handle_animations():
-	match cur_anim:
-		IDLE:
-			anim_tree.set("parameters/Movement/transition_request","Idle") 
-		RUN:
-			anim_tree.set("parameters/Movement/transition_request","Run") 
-		
+		dash_wait = dash_cooldown
+		is_dashing = true
+		velocity = last_move_direction.normalized() * 40
+		anim_tree.set("parameters/conditions/dash", true)
+		await get_tree().create_timer(.2).timeout
+		anim_tree.set("parameters/conditions/dash", false)
+		is_dashing = false
