@@ -16,6 +16,20 @@ var movement_direction:Vector3
 var is_dashing: bool = false
 var dash_wait = 0
 
+@export var time_to_next_attack = 1.0
+var combo_timer = 0.0
+var attack_count = 0
+var is_attacking = false
+var attack_cooldown = 0.4
+var count = 0
+var idle
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("attack") and attack_cooldown <= 0:
+		perform_attack()
+	
+	if combo_timer >= time_to_next_attack:
+			reset_attack_sequence()
 
 func _physics_process(delta: float) -> void:
 	
@@ -43,16 +57,18 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.y = y_velocity + gravity * delta
 	
-	var idle = !movement_direction.length()
+	idle = !movement_direction.length()
 	
 	anim_tree.set("parameters/conditions/idle", idle)
 	anim_tree.set("parameters/conditions/run", !idle)
-	anim_tree.set("parameters/conditions/attack", Input.is_action_just_pressed("attack"))
 	
 	if Input.is_action_just_pressed("dash") and dash_wait <= 0:
 		dash()
 	else:
 		dash_wait -= delta
+	
+	combo_timer += delta
+	attack_cooldown -= delta
 	
 	move_and_slide()
 	
@@ -75,3 +91,22 @@ func dash():
 		await get_tree().create_timer(.2).timeout
 		anim_tree.set("parameters/conditions/dash", false)
 		is_dashing = false
+
+func perform_attack():
+	combo_timer = 0
+	attack_cooldown = 0.4
+	
+	if idle:
+		if attack_count == 0:
+			anim_tree.get("parameters/playback").travel("Attack 1")
+		elif attack_count == 1:
+			anim_tree.get("parameters/playback").travel("Attack 2")
+		elif attack_count == 2:
+			anim_tree.get("parameters/playback").travel("Attack 3")
+	
+	attack_count = (attack_count + 1) % 3
+	
+
+func reset_attack_sequence():
+	attack_count = 0
+	combo_timer = 0.0
