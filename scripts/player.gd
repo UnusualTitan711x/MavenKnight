@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var dash_cooldown = 1.0
 
 @onready var camera = %Camera3D
-@onready var anim_tree: AnimationTree = $Graphics/Knight/AnimationTree
+@onready var anim_tree: AnimationTree = $Graphics/Kngiht/AnimationTree
 
 @export var camera_speed = 10.0
 
@@ -103,8 +103,8 @@ func perform_attack():
 			anim_tree.get("parameters/playback").travel("Attack 2")
 		elif attack_count == 2:
 			anim_tree.get("parameters/playback").travel("Attack 3")
-	
-	attack_count = (attack_count + 1) % 3
+		
+		attack_count = (attack_count + 1) % 3
 	
 
 func reset_attack_sequence():

@@ -48,6 +48,12 @@ attack={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Weapon"
+3d_physics/layer_3="Enemy"
+
 [physics]
 
 3d/physics_engine="JoltPhysics3D"
