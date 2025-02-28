@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 @export_group("Movement")
 @export var movement_speed = 8.0
@@ -24,7 +25,13 @@ var attack_cooldown = 0.4
 var count = 0
 var idle
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	combo_timer += delta
+	attack_cooldown -= delta
+	
+	if !idle:
+		attack_cooldown = 0
+	
 	if Input.is_action_just_pressed("attack") and attack_cooldown <= 0:
 		perform_attack()
 	
@@ -67,9 +74,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		dash_wait -= delta
 	
-	combo_timer += delta
-	attack_cooldown -= delta
-	
 	move_and_slide()
 	
 	if movement_direction.length() > 0.2:
@@ -110,3 +114,4 @@ func perform_attack():
 func reset_attack_sequence():
 	attack_count = 0
 	combo_timer = 0.0
+	attack_cooldown = 0
