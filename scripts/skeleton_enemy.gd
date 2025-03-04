@@ -1,20 +1,16 @@
-extends Node3D
+extends CharacterBody3D
 class_name Enemy
 
 @onready var anim_tree: AnimationTree = $AnimationTree
+@onready var collider: CollisionShape3D = $CollisionShape3D
+@onready var agent: NavigationAgent3D = $NavigationAgent3D
+
+
 @export var health = 6
+@export var detection_radius = 10.0
+@export var speed = 2
 
 func take_damage(damage: int):
-	if health <= damage:
-		die()
-		return
-	
 	print("ouch!")
 	health -= damage
 	anim_tree.get("parameters/playback").travel("Hit")
-
-func die():
-	anim_tree.get("parameters/playback").travel("Death")
-	print("I'm ded")
-	await get_tree().create_timer(2).timeout
-	queue_free()

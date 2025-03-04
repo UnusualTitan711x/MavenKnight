@@ -17,10 +17,9 @@ var movement_direction:Vector3
 var is_dashing: bool = false
 var dash_wait = 0
 
-@export var time_to_next_attack = 1.0
+@export var time_to_next_attack = 0.6
 var combo_timer = 0.0
 var attack_count = 0
-var is_attacking = false
 var attack_cooldown = 0.4
 var count = 0
 var idle
