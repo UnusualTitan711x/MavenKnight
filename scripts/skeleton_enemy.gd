@@ -8,7 +8,7 @@ class_name Enemy
 
 @export var health = 6
 @export var detection_radius = 10.0
-@export var speed = 2
+@export var speed = 3.5
 
 func take_damage(damage: int):
 	print("ouch!")
