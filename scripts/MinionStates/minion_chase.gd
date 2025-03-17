@@ -10,6 +10,8 @@ func Enter():
 
 func PhysicsUpdate(_delta: float):
 	agent.target_position = player.global_position
+	if player.dead:
+		transitioned.emit(self, "MinionIdle")
 	
 	if not agent.is_navigation_finished():
 		var direction = skeleton.global_position.direction_to(player.global_position)
@@ -18,21 +20,17 @@ func PhysicsUpdate(_delta: float):
 		skeleton.anim_tree.set("parameters/conditions/run", true)
 		skeleton.move_and_slide()
 	else:
-		skeleton.anim_tree.set("parameters/condition/run", false)
-		# transition to another state
 		transitioned.emit(self, "MinionIdle")
 	
 	skeleton.look_at(player.global_position, Vector3.UP)
-	# skeleton.rotation.z = 0
-	# skeleton.rotation.x = 0
 	
 	if skeleton.global_position.distance_to(player.global_position) > skeleton.detection_radius * 2:
 		transitioned.emit(self, "MinionIdle")
-		skeleton.anim_tree.set("parameters/conditions/run", false)
 
 func Update(_delta: float):
 	if skeleton.health <= 0:
 		transitioned.emit(self, "MinionDeath")
+	
 
 func Exit():
 	skeleton.anim_tree.set("parameters/conditions/run", false)

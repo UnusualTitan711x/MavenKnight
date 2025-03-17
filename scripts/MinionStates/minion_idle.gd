@@ -16,8 +16,13 @@ func Update(_delta: float):
 func PhysicsUpdate(_delta: float):
 	var distance_to_player = skeleton.global_position - player.global_position
 	
+	if distance_to_player.length() <= skeleton.attack_range:
+		transitioned.emit(self, "MinionAttack")
+	
 	if distance_to_player.length() <= skeleton.detection_radius:
 		transitioned.emit(self, "MinionChase")
+	
+	
 
 func Exit():
 	skeleton.anim_tree.set("parameters/conditions/idle", false)

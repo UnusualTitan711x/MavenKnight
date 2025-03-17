@@ -1,8 +1,10 @@
 extends CharacterBody3D
 class_name Player
 
+@export var health = 20
+
 @export_group("Movement")
-@export var movement_speed = 8.0
+@export var movement_speed = 9.0
 @export var rotation_speed = 12.0
 @export var gravity = -30.0
 @export var dash_cooldown = 1.0
@@ -23,8 +25,12 @@ var attack_count = 0
 var attack_cooldown = 0.4
 var count = 0
 var idle
+var dead = false
 
 func _process(delta: float) -> void:
+	if dead:
+		return
+	
 	combo_timer += delta
 	attack_cooldown -= delta
 	
@@ -38,7 +44,8 @@ func _process(delta: float) -> void:
 			reset_attack_sequence()
 
 func _physics_process(delta: float) -> void:
-	
+	if dead:
+		return
 	# Get Imout from player
 	var raw_input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
@@ -114,3 +121,17 @@ func reset_attack_sequence():
 	attack_count = 0
 	combo_timer = 0.0
 	attack_cooldown = 0
+
+func take_damage(damage: int):
+	if health <= 0:
+		die()
+		return
+	
+	health -= damage
+	anim_tree.get("parameters/playback").travel("Hit")
+
+func die():
+	dead = true
+	print("Player got died.")
+	anim_tree.get("parameters/playback").travel("Death")
+	
