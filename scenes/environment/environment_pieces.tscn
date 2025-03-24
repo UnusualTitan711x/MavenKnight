@@ -1,0 +1,39 @@
+[gd_scene load_steps=12 format=3 uid="uid://dcnpkxrqmcfkw"]
+
+[ext_resource type="PackedScene" uid="uid://chllanxt31f5d" path="res://scenes/environment/floor.tscn" id="1_jfork"]
+[ext_resource type="PackedScene" uid="uid://evitrayuf7k5" path="res://scenes/environment/floor_wood.tscn" id="2_jg4mf"]
+[ext_resource type="PackedScene" uid="uid://kh555ipiiaev" path="res://scenes/environment/pillar.tscn" id="3_h1j0o"]
+[ext_resource type="PackedScene" uid="uid://ctg58m25omw5c" path="res://scenes/environment/wall.tscn" id="4_0p2vb"]
+[ext_resource type="PackedScene" uid="uid://c4pnjxufbc7op" path="res://scenes/environment/wall_arched.tscn" id="5_8iwt2"]
+[ext_resource type="PackedScene" uid="uid://b8reyr6coptrs" path="res://scenes/environment/wall_archedwindow.tscn" id="6_57bfl"]
+[ext_resource type="PackedScene" uid="uid://b2mp7bgiom8he" path="res://scenes/environment/wall_corner.tscn" id="7_h101v"]
+[ext_resource type="PackedScene" uid="uid://b5bupuctsu4a2" path="res://scenes/environment/wall_doorway.tscn" id="8_ooyd4"]
+[ext_resource type="PackedScene" uid="uid://ckku2p16loh1x" path="res://scenes/environment/wall_tsplit.tscn" id="9_rqvla"]
+[ext_resource type="PackedScene" uid="uid://5alu6ut4eal8" path="res://scenes/environment/stairs_walled_2.tscn" id="10_jfork"]
+[ext_resource type="PackedScene" uid="uid://bllbx7pp4qli4" path="res://assets/building/stairs_long.glb" id="11_5e3hf"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_jfork")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="StaticBody3D" parent="." instance=ExtResource("2_jg4mf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="Pillar" parent="." instance=ExtResource("3_h1j0o")]
+
+[node name="Wall" parent="." instance=ExtResource("4_0p2vb")]
+
+[node name="Wall_arched" parent="." instance=ExtResource("5_8iwt2")]
+
+[node name="Wall_archedwindow" parent="." instance=ExtResource("6_57bfl")]
+
+[node name="Wall_corner" parent="." instance=ExtResource("7_h101v")]
+
+[node name="Wall_doorway" parent="." instance=ExtResource("8_ooyd4")]
+
+[node name="wall_tsplit" parent="." instance=ExtResource("9_rqvla")]
+
+[node name="stairs_walled2" parent="." instance=ExtResource("10_jfork")]
+
+[node name="stairs_long2" parent="." instance=ExtResource("11_5e3hf")]

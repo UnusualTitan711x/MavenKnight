@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6g0nxjyy0ofi"]
+
+[ext_resource type="Script" uid="uid://dkpqia35wyc0a" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wocjn"]
+bg_color = Color(0.839216, 0.121569, 0.211765, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qurc"]
+bg_color = Color(0, 0.921569, 0.321569, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ahhtf")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 24.0
+offset_right = 439.0
+offset_bottom = 42.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_wocjn")
+max_value = 5.0
+show_percentage = false
+
+[node name="StaminaBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 57.0
+offset_right = 307.0
+offset_bottom = 75.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_8qurc")
+max_value = 5.0
+step = 0.1
+value = 1.0
+show_percentage = false

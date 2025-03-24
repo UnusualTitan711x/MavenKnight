@@ -1,7 +1,17 @@
 extends CharacterBody3D
 class_name Player
 
-@export var health = 20
+@export var max_health = 20
+@export var max_stamina = 20
+@export var dash_stamina_cost = 5
+
+var health
+
+var stamina: float
+var is_stamina_depleted: bool = false
+var regen_delay = 1.0
+var regen_rate = 5
+var regen_timer = 0.0
 
 @export_group("Movement")
 @export var movement_speed = 9.0
@@ -27,10 +37,19 @@ var count = 0
 var idle
 var dead = false
 
+func _ready() -> void:
+	stamina = max_stamina
+	health = max_health
+	print(stamina)
+
 func _process(delta: float) -> void:
 	if dead:
 		return
 	
+	if health <= 0:
+		die()
+		return
+
 	combo_timer += delta
 	attack_cooldown -= delta
 	
@@ -46,6 +65,9 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if dead:
 		return
+	
+	handle_stamina_regen(delta)
+	
 	# Get Imout from player
 	var raw_input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
@@ -76,9 +98,12 @@ func _physics_process(delta: float) -> void:
 	anim_tree.set("parameters/conditions/run", !idle)
 	
 	if Input.is_action_just_pressed("dash") and dash_wait <= 0:
-		dash()
+		if stamina >= dash_stamina_cost:
+			dash()
 	else:
 		dash_wait -= delta
+	
+	is_stamina_depleted = stamina <= 0
 	
 	move_and_slide()
 	
@@ -94,6 +119,15 @@ func _physics_process(delta: float) -> void:
 
 func dash():
 	if movement_direction.length() > 0.2:
+		if stamina <= dash_stamina_cost:
+			stamina = 0
+			is_stamina_depleted = 0
+		else:
+			stamina -= dash_stamina_cost
+		
+		regen_timer = regen_delay
+		print(stamina)
+		
 		dash_wait = dash_cooldown
 		is_dashing = true
 		velocity = last_move_direction.normalized() * 40
@@ -101,6 +135,10 @@ func dash():
 		await get_tree().create_timer(.2).timeout
 		anim_tree.set("parameters/conditions/dash", false)
 		is_dashing = false
+		
+		if stamina <= 0:
+			stamina = 0
+			is_stamina_depleted = true
 
 func perform_attack():
 	combo_timer = 0
@@ -123,11 +161,9 @@ func reset_attack_sequence():
 	attack_cooldown = 0
 
 func take_damage(damage: int):
-	if health <= 0:
-		die()
-		return
-	
 	health -= damage
+	
+	print("Player health:", health)
 	anim_tree.get("parameters/playback").travel("Hit")
 
 func die():
@@ -135,3 +171,13 @@ func die():
 	print("Player got died.")
 	anim_tree.get("parameters/playback").travel("Death")
 	
+func handle_stamina_regen(delta: float):
+	if not is_dashing and stamina < max_stamina:
+		if regen_timer > 0:
+			regen_timer -= delta
+		else:
+			stamina += regen_rate * delta
+			if stamina >= max_stamina:
+				stamina = max_stamina
+				is_stamina_depleted = false
+	pass

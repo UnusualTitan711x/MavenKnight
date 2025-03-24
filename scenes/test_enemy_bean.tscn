@@ -9,7 +9,7 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ya3v1"]
 material = SubResource("StandardMaterial3D_2ffej")
 
-[node name="RigidBody3D" type="AnimatableBody3D"]
+[node name="Bean" type="AnimatableBody3D"]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_s1qit")

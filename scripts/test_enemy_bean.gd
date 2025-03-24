@@ -7,6 +7,8 @@ class_name Test_Enemy
 func take_damage(damage: int):
 	if health <= damage:
 		die()
+		return
+	
 	print("ouch!")
 	health -= damage
 	
@@ -16,7 +18,7 @@ func take_damage(damage: int):
 	mesh.material_override = material # Change color to red
 	await get_tree().create_timer(0.25).timeout
 	material.albedo_color = Color.WHITE
-	mesh.material_override = material # Change it back to white
+	mesh.material_override = null # Change it back to white
 
 func die():
 	print("I'm ded")
