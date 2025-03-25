@@ -5,13 +5,15 @@ class_name Player
 @export var max_stamina = 20
 @export var dash_stamina_cost = 5
 
-var health
 
+var health
 var stamina: float
 var is_stamina_depleted: bool = false
 var regen_delay = 1.0
 var regen_rate = 5
 var regen_timer = 0.0
+
+var keys: int = 0
 
 @export_group("Movement")
 @export var movement_speed = 9.0
@@ -126,7 +128,6 @@ func dash():
 			stamina -= dash_stamina_cost
 		
 		regen_timer = regen_delay
-		print(stamina)
 		
 		dash_wait = dash_cooldown
 		is_dashing = true
