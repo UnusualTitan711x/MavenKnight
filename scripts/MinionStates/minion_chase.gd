@@ -14,7 +14,7 @@ func PhysicsUpdate(_delta: float):
 		transitioned.emit(self, "MinionIdle")
 	
 	if not agent.is_navigation_finished():
-		var direction = skeleton.global_position.direction_to(player.global_position)
+		var direction = skeleton.global_position.direction_to(agent.get_next_path_position())
 		skeleton.velocity = direction * skeleton.speed
 		skeleton.anim_tree
 		skeleton.anim_tree.set("parameters/conditions/run", true)
@@ -22,7 +22,7 @@ func PhysicsUpdate(_delta: float):
 	else:
 		transitioned.emit(self, "MinionIdle")
 	
-	skeleton.look_at(player.global_position, Vector3.UP)
+	skeleton.look_at(agent.get_next_path_position(), Vector3.UP)
 	
 	if skeleton.global_position.distance_to(player.global_position) > skeleton.detection_radius * 2:
 		transitioned.emit(self, "MinionIdle")
