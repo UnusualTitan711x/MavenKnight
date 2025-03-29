@@ -5,7 +5,6 @@ class_name Player
 @export var max_stamina = 20
 @export var dash_stamina_cost = 5
 
-
 var health
 var stamina: float
 var is_stamina_depleted: bool = false
@@ -13,16 +12,31 @@ var regen_delay = 1.0
 var regen_rate = 5
 var regen_timer = 0.0
 
-var keys: int = 0
+var keys: int = 0:
+	get:
+		return keys
+	set(value):
+		keys = value
+		print(keys)
+		hud.keys_count.text = str(keys)
+
+var enemies_defeated: int = 0:
+	get:
+		return enemies_defeated
+	set(value):
+		enemies_defeated = value
+		hud.enemies_killed_count.text = str(enemies_defeated)
 
 @export_group("Movement")
 @export var movement_speed = 9.0
 @export var rotation_speed = 12.0
 @export var gravity = -30.0
+@export var can_dash: bool = true
 @export var dash_cooldown = 1.0
 
 @onready var camera = %Camera3D
 @onready var anim_tree: AnimationTree = $Graphics/Kngiht/AnimationTree
+@onready var hud: HUD = $"../HUD"
 
 @export var camera_speed = 10.0
 
@@ -45,6 +59,9 @@ func _ready() -> void:
 	print(stamina)
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+	
 	if dead:
 		return
 	
@@ -99,7 +116,7 @@ func _physics_process(delta: float) -> void:
 	anim_tree.set("parameters/conditions/idle", idle)
 	anim_tree.set("parameters/conditions/run", !idle)
 	
-	if Input.is_action_just_pressed("dash") and dash_wait <= 0:
+	if Input.is_action_just_pressed("dash") and dash_wait <= 0 and can_dash:
 		if stamina >= dash_stamina_cost:
 			dash()
 	else:

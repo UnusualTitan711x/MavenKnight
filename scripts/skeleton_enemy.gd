@@ -12,7 +12,7 @@ class_name Enemy
 
 @export var drops: Array[DropData]
 
-var player
+var player: Player
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -43,6 +43,7 @@ func drop_items():
 		for j in drop_count:
 			var drop = drops[i].item.instantiate()  as Pickup
 			add_sibling(drop)
-			drop.global_position = global_position + Vector3(randf_range(0, 2), 1, randf_range(0, 2))
+			drop.global_position = global_position + Vector3(randf_range(0, 1.2), 1, randf_range(0, 1.2))
+			drop.reparent(get_tree().root)
 		pass
 	pass
