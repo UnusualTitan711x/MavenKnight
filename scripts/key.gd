@@ -1,10 +1,6 @@
-extends Area3D
+extends Pickup
 
-
-
-func _on_body_entered(body: Node3D) -> void:
-	if body is Player:
-		body.keys += 1
-		print("Key added")
-		# do something
-		queue_free()
+func on_item_picked():
+	player.keys += 1
+	print("Key added")
+	queue_free()
