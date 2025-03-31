@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://ub5q7qootrbc"]
+[gd_scene load_steps=9 format=4 uid="uid://dbedkiiwkwce7"]
 
-[ext_resource type="Script" uid="uid://wufa5u0kl0wv" path="res://scripts/key.gd" id="1_yk2u2"]
+[ext_resource type="Script" uid="uid://wufa5u0kl0wv" path="res://scripts/key.gd" id="1_2ti8f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pklip"]
-albedo_color = Color(0.51649, 0.346918, 0.197829, 1)
+albedo_color = Color(0.8552, 0.669661, 0.247844, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_sbwue"]
 _surfaces = [{
@@ -86,7 +86,8 @@ _data = {
 }
 
 [node name="Key" type="Area3D"]
-script = ExtResource("1_yk2u2")
+script = ExtResource("1_2ti8f")
+type = 2
 
 [node name="key_mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.57019e-06, 0.71, 0, -0.71, -2.57019e-06, 0, 0, 0, 0.71, 0, -0.9, 0)

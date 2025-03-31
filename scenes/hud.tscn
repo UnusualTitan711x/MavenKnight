@@ -36,7 +36,6 @@ max_value = 5.0
 show_percentage = false
 
 [node name="StaminaBar" type="ProgressBar" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 35.0
 offset_top = 57.0

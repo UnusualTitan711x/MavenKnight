@@ -12,20 +12,24 @@ var regen_delay = 1.0
 var regen_rate = 5
 var regen_timer = 0.0
 
+var silver_keys: int = 0
+var gold_keys: int = 0
 var keys: int = 0:
 	get:
 		return keys
 	set(value):
 		keys = value
 		print(keys)
-		hud.keys_count.text = str(keys)
+		if hud:
+			hud.keys_count.text = str(keys)
 
 var enemies_defeated: int = 0:
 	get:
 		return enemies_defeated
 	set(value):
 		enemies_defeated = value
-		hud.enemies_killed_count.text = str(enemies_defeated)
+		if hud:
+			hud.enemies_killed_count.text = str(enemies_defeated)
 
 @export_group("Movement")
 @export var movement_speed = 9.0
