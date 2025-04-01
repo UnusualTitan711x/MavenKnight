@@ -1,7 +1,8 @@
-[gd_scene load_steps=133 format=4 uid="uid://cdvv3jdflcsy8"]
+[gd_scene load_steps=134 format=4 uid="uid://cdvv3jdflcsy8"]
 
 [ext_resource type="MeshLibrary" uid="uid://c2b5beh2asrof" path="res://resources/dungeon_buildings.tres" id="1_3bmlt"]
 [ext_resource type="Script" uid="uid://cwym2m08tqky1" path="res://scripts/game_manager.gd" id="1_hey2k"]
+[ext_resource type="PackedScene" uid="uid://cnqbkix8v1o2p" path="res://scenes/pause_menu.tscn" id="2_172wr"]
 [ext_resource type="PackedScene" uid="uid://byej5l577lyav" path="res://scenes/player.tscn" id="2_jm1iu"]
 [ext_resource type="PackedScene" uid="uid://bdswoagl7s718" path="res://scenes/test_enemy_skeleton.tscn" id="3_pbc48"]
 [ext_resource type="PackedScene" uid="uid://c6g0nxjyy0ofi" path="res://scenes/hud.tscn" id="4_eqxsl"]
@@ -1316,7 +1317,16 @@ points = PackedVector3Array(0.357499, 0.299903, 0.375008, 0.207514, 0.299903, 0.
 
 [node name="level_2" type="Node3D"]
 
-[node name="HUD" parent="." instance=ExtResource("4_eqxsl")]
+[node name="GameManager" type="Node" parent="." groups=["GameManager"]]
+script = ExtResource("1_hey2k")
+
+[node name="UI Layer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="UI Layer" instance=ExtResource("4_eqxsl")]
+
+[node name="PauseMenu" parent="UI Layer" instance=ExtResource("2_172wr")]
+process_mode = 2
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_eqxsl")
@@ -1849,6 +1859,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 3, -117)
 
 [node name="Podium" parent="." instance=ExtResource("10_que50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.9, -69)
-
-[node name="GameManager" type="Node" parent="." groups=["GameManager"]]
-script = ExtResource("1_hey2k")

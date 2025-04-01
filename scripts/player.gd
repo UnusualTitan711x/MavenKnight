@@ -3,7 +3,8 @@ class_name Player
 
 @onready var camera = %Camera3D
 @onready var anim_tree: AnimationTree = $Graphics/Kngiht/AnimationTree
-@onready var hud: HUD = $"../HUD"
+@onready var hud: HUD = $"../UI Layer/HUD"
+
 var manager
 
 @export var max_health = 20

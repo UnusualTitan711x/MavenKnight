@@ -82,42 +82,30 @@ text = "x"
 
 [node name="keys_count" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1052.0
+offset_left = 100.0
 offset_top = 86.0
-offset_right = -1012.0
+offset_right = 140.0
 offset_bottom = 135.0
-grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_oo0fn")
 theme_override_font_sizes/font_size = 36
 text = "99"
 
 [node name="silver_keys_count" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1052.0
+offset_left = 100.0
 offset_top = 127.0
-offset_right = -1012.0
+offset_right = 140.0
 offset_bottom = 176.0
-grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_oo0fn")
 theme_override_font_sizes/font_size = 36
 text = "99"
 
 [node name="gold_keys_count" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1052.0
+offset_left = 100.0
 offset_top = 172.0
-offset_right = -1012.0
+offset_right = 140.0
 offset_bottom = 221.0
-grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_oo0fn")
 theme_override_font_sizes/font_size = 36
 text = "99"
@@ -130,6 +118,7 @@ offset_right = 88.0
 offset_bottom = 138.0
 texture = ExtResource("3_uo2fv")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Silver Key" type="TextureRect" parent="."]
 layout_mode = 0
@@ -139,6 +128,7 @@ offset_right = 88.0
 offset_bottom = 181.0
 texture = ExtResource("4_047uy")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Gold Key" type="TextureRect" parent="."]
 layout_mode = 0
@@ -148,12 +138,16 @@ offset_right = 88.0
 offset_bottom = 224.0
 texture = ExtResource("5_5pdws")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect4" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 1006.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -146.0
 offset_top = 29.0
-offset_right = 1055.0
+offset_right = -97.0
 offset_bottom = 78.0
 texture = ExtResource("6_047uy")
 expand_mode = 1

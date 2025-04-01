@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnqbkix8v1o2p"]
+
+[ext_resource type="Script" uid="uid://d1kf2dsu7m130" path="res://scripts/pause_menu.gd" id="1_myx47"]
+[ext_resource type="FontFile" uid="uid://d0knp3x3wf5a5" path="res://assets/WinkySans-VariableFont_wght.ttf" id="1_n87rw"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_myx47")
+
+[node name="Panel" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.231373)
+metadata/_edit_lock_ = true
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 243.0
+offset_top = 108.0
+offset_right = -243.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel2"]
+layout_mode = 2
+offset_left = 177.0
+offset_top = 18.0
+offset_right = 489.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_n87rw")
+theme_override_font_sizes/font_size = 50
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -82.0
+offset_right = 193.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ResumeButton" type="Button" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_n87rw")
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+
+[node name="RetryButton" type="Button" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_n87rw")
+theme_override_font_sizes/font_size = 32
+text = "Retry"
+
+[node name="QuitButton" type="Button" parent="Panel2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_n87rw")
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[connection signal="pressed" from="Panel2/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel2/MarginContainer/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Panel2/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
