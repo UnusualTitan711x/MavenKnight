@@ -11,9 +11,9 @@ enum lock_type {
 
 func on_item_picked():
 	if type == lock_type.silver:
-		player.silver_keys += 1
+		manager.silver_keys += 1
 	if type == lock_type.gold:
-		player.gold_keys += 1
+		manager.gold_keys += 1
 	else:
 		manager.keys += 1
 	print("Key added")

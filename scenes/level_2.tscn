@@ -1,6 +1,7 @@
-[gd_scene load_steps=132 format=4 uid="uid://cdvv3jdflcsy8"]
+[gd_scene load_steps=133 format=4 uid="uid://cdvv3jdflcsy8"]
 
 [ext_resource type="MeshLibrary" uid="uid://c2b5beh2asrof" path="res://resources/dungeon_buildings.tres" id="1_3bmlt"]
+[ext_resource type="Script" uid="uid://cwym2m08tqky1" path="res://scripts/game_manager.gd" id="1_hey2k"]
 [ext_resource type="PackedScene" uid="uid://byej5l577lyav" path="res://scenes/player.tscn" id="2_jm1iu"]
 [ext_resource type="PackedScene" uid="uid://bdswoagl7s718" path="res://scenes/test_enemy_skeleton.tscn" id="3_pbc48"]
 [ext_resource type="PackedScene" uid="uid://c6g0nxjyy0ofi" path="res://scenes/hud.tscn" id="4_eqxsl"]
@@ -1807,27 +1808,6 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -41, 2, -1
 [node name="Test Skeleton3" parent="Enemies" instance=ExtResource("3_pbc48")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 2, -36.1)
 
-[node name="Test Skeleton4" parent="Enemies" instance=ExtResource("3_pbc48")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23, 2, -70)
-
-[node name="Test Skeleton5" parent="Enemies" instance=ExtResource("3_pbc48")]
-transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 14, 2, -54)
-
-[node name="Test Skeleton6" parent="Enemies" instance=ExtResource("3_pbc48")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 51, 2, -75)
-
-[node name="Test Skeleton7" parent="Enemies" instance=ExtResource("3_pbc48")]
-transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 19, 2, -176)
-
-[node name="Test Skeleton8" parent="Enemies" instance=ExtResource("3_pbc48")]
-transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 28, 2, -166)
-
-[node name="Test Skeleton9" parent="Enemies" instance=ExtResource("3_pbc48")]
-transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 21, 2, -141)
-
-[node name="Test Skeleton10" parent="Enemies" instance=ExtResource("3_pbc48")]
-transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 29, 2, -123)
-
 [node name="Doors" type="Node" parent="."]
 
 [node name="door" parent="Doors" instance=ExtResource("5_wo48x")]
@@ -1869,3 +1849,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 3, -117)
 
 [node name="Podium" parent="." instance=ExtResource("10_que50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.9, -69)
+
+[node name="GameManager" type="Node" parent="." groups=["GameManager"]]
+script = ExtResource("1_hey2k")

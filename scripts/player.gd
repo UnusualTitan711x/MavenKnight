@@ -43,7 +43,6 @@ func _ready() -> void:
 	manager = get_tree().get_first_node_in_group("GameManager")
 	stamina = max_stamina
 	health = max_health
-	print(stamina)
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("restart"):
