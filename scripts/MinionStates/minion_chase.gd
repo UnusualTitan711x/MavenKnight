@@ -16,7 +16,6 @@ func PhysicsUpdate(_delta: float):
 	if not agent.is_navigation_finished():
 		var direction = skeleton.global_position.direction_to(agent.get_next_path_position())
 		skeleton.velocity = direction * skeleton.speed
-		skeleton.anim_tree
 		skeleton.anim_tree.set("parameters/conditions/run", true)
 		skeleton.move_and_slide()
 	else:

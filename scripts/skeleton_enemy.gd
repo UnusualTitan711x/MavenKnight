@@ -17,13 +17,13 @@ var player: Player
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if velocity:
 		anim_tree.set("parameters/conditions/idle", false)
 	else:
 		anim_tree.set("parameters/conditions/idle", true)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player.dead:
 		anim_tree.get("parameters/playback").travel("Cheer")
 

@@ -15,6 +15,6 @@ func _ready() -> void:
 	enemies_killed_count.text = str(player.enemies_defeated)
 	keys_count.text = str(player.keys)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	health_bar.value = player.health
 	stamina_bar.value = player.stamina

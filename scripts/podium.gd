@@ -18,7 +18,7 @@ func _ready() -> void:
 		initial_enemy_count = enemies.size()
 		print("Enemy Count:", initial_enemy_count)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player.enemies_defeated == initial_enemy_count and not enemies_clear:
 		enemies_clear = true
 		print("All enemies defeated")

@@ -13,8 +13,6 @@ func Exit():
 	skeleton.anim_tree.set("parameters/conditions/attack", false)
 	
 func Update(_delta: float):
-	var distance_to_player = skeleton.global_position.distance_to(player.global_position)
-	
 	skeleton.look_at(player.global_position, Vector3.UP)
 	
 	if skeleton.global_position.distance_to(player.global_position) > skeleton.attack_range:

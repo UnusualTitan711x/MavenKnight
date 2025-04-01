@@ -6,7 +6,9 @@ class_name MinionIdle
 var player: Player
 
 func Enter():
-	skeleton.anim_tree.set("parameters/conditions/idle", true)
+	if skeleton.anim_tree:
+		skeleton.anim_tree.set("parameters/conditions/idle", true)
+	
 	player = get_tree().get_first_node_in_group("Player")
 
 func Update(_delta: float):
