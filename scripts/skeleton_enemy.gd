@@ -13,9 +13,11 @@ class_name Enemy
 @export var drops: Array[DropData]
 
 var player: Player
+var manager: GameManager
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
+	manager = get_tree().get_first_node_in_group("GameManager")
 
 func _physics_process(_delta: float) -> void:
 	if velocity:

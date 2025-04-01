@@ -16,6 +16,6 @@ func die():
 	skeleton.queue_free()
 
 func Enter():
-	skeleton.player.enemies_defeated += 1
+	skeleton.manager.enemies_defeated += 1
 	skeleton.drop_items()
 	die()

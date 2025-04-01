@@ -1,5 +1,6 @@
-[gd_scene load_steps=154 format=4 uid="uid://sfx14nnamvbe"]
+[gd_scene load_steps=155 format=4 uid="uid://sfx14nnamvbe"]
 
+[ext_resource type="Script" uid="uid://cwym2m08tqky1" path="res://scripts/game_manager.gd" id="1_sx8yt"]
 [ext_resource type="MeshLibrary" uid="uid://c17egdsatt86a" path="res://resources/walls.tres" id="1_uwxec"]
 [ext_resource type="MeshLibrary" uid="uid://d0cxa18iqxx25" path="res://resources/dungeon_floors.tres" id="2_1pn4d"]
 [ext_resource type="PackedScene" uid="uid://byej5l577lyav" path="res://scenes/player.tscn" id="2_uwxec"]
@@ -1504,6 +1505,9 @@ shadow_mesh = SubResource("ArrayMesh_7cf4f")
 
 [node name="level_3" type="Node3D"]
 
+[node name="GameManager" type="Node" parent="." groups=["GameManager"]]
+script = ExtResource("1_sx8yt")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1pn4d")
 
@@ -1518,9 +1522,8 @@ shadow_opacity = 0.8
 [node name="Player" parent="." instance=ExtResource("2_uwxec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
-[node name="Podium" parent="." node_paths=PackedStringArray("enemy_container") instance=ExtResource("9_ha73p")]
+[node name="Podium" parent="." instance=ExtResource("9_ha73p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158, 2.1, -133)
-enemy_container = NodePath("../Enemies")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Podium"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.435, 0)

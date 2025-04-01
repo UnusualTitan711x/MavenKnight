@@ -11,21 +11,26 @@ enum lock_type {
 	gold
 }
 
+var manager: GameManager
+
+func _ready() -> void:
+	manager = get_tree().get_first_node_in_group("GameManager")
+
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
 		if not is_open:
-			if type == lock_type.silver and body.silver_keys > 0:
-				body.silver_keys -= 1
+			if type == lock_type.silver and manager.silver_keys > 0:
+				manager.silver_keys -= 1
 				is_open = true
 				print("Door opened")
 				door.queue_free()
-			elif type == lock_type.gold and body.gold_keys > 0:
-				body.gold_keys -= 1
+			elif type == lock_type.gold and manager.gold_keys > 0:
+				manager.gold_keys -= 1
 				is_open = true
 				print("Door opened")
 				door.queue_free()
-			elif type == lock_type.normal and body.keys > 0:
-				body.keys -= 1
+			elif type == lock_type.normal and manager.keys > 0:
+				manager.keys -= 1
 				is_open = true
 				print("Door opened")
 				door.queue_free()

@@ -1,6 +1,11 @@
 extends CharacterBody3D
 class_name Player
 
+@onready var camera = %Camera3D
+@onready var anim_tree: AnimationTree = $Graphics/Kngiht/AnimationTree
+@onready var hud: HUD = $"../HUD"
+var manager
+
 @export var max_health = 20
 @export var max_stamina = 20
 @export var dash_stamina_cost = 5
@@ -12,35 +17,12 @@ var regen_delay = 1.0
 var regen_rate = 5
 var regen_timer = 0.0
 
-var silver_keys: int = 0
-var gold_keys: int = 0
-var keys: int = 0:
-	get:
-		return keys
-	set(value):
-		keys = value
-		print(keys)
-		if hud:
-			hud.keys_count.text = str(keys)
-
-var enemies_defeated: int = 0:
-	get:
-		return enemies_defeated
-	set(value):
-		enemies_defeated = value
-		if hud:
-			hud.enemies_killed_count.text = str(enemies_defeated)
-
 @export_group("Movement")
 @export var movement_speed = 9.0
 @export var rotation_speed = 12.0
 @export var gravity = -30.0
 @export var can_dash: bool = true
 @export var dash_cooldown = 1.0
-
-@onready var camera = %Camera3D
-@onready var anim_tree: AnimationTree = $Graphics/Kngiht/AnimationTree
-@onready var hud: HUD = $"../HUD"
 
 @export var camera_speed = 10.0
 
@@ -58,6 +40,7 @@ var idle
 var dead = false
 
 func _ready() -> void:
+	manager = get_tree().get_first_node_in_group("GameManager")
 	stamina = max_stamina
 	health = max_health
 	print(stamina)

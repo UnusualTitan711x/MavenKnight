@@ -16,6 +16,9 @@ func Update(_delta: float):
 		transitioned.emit(self, "MinionDeath")
 
 func PhysicsUpdate(_delta: float):
+	if not player:
+		return
+	
 	var distance_to_player = skeleton.global_position - player.global_position
 	
 	if distance_to_player.length() <= skeleton.attack_range:

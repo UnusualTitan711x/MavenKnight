@@ -1867,6 +1867,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 3, -117)
 [node name="Heart5" parent="Hearts" instance=ExtResource("7_y0kc7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 3, -117)
 
-[node name="Podium" parent="." node_paths=PackedStringArray("enemy_container") instance=ExtResource("10_que50")]
+[node name="Podium" parent="." instance=ExtResource("10_que50")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.9, -69)
-enemy_container = NodePath("../Enemies")
