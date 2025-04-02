@@ -135,7 +135,7 @@ func dash():
 		
 		dash_wait = dash_cooldown
 		is_dashing = true
-		velocity = last_move_direction.normalized() * 40
+		velocity = last_move_direction.normalized() * 25
 		anim_tree.set("parameters/conditions/dash", true)
 		await get_tree().create_timer(.2).timeout
 		anim_tree.set("parameters/conditions/dash", false)
