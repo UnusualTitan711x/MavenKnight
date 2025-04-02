@@ -8,7 +8,7 @@ var player: Player
 func Enter():
 	player = get_tree().get_first_node_in_group("Player")
 
-func PhysicsUpdate(_delta: float):
+func PhysicsUpdate(delta: float):
 	agent.target_position = player.global_position
 	if player.dead:
 		transitioned.emit(self, "MinionIdle")
@@ -18,10 +18,12 @@ func PhysicsUpdate(_delta: float):
 		skeleton.velocity = direction * skeleton.speed
 		skeleton.anim_tree.set("parameters/conditions/run", true)
 		skeleton.move_and_slide()
+		
+		var target_basis = Basis().looking_at(direction, Vector3.UP)
+		skeleton.global_transform.basis = skeleton.global_transform.basis.slerp(target_basis, 10 * delta)
 	else:
 		transitioned.emit(self, "MinionIdle")
 	
-	skeleton.look_at(agent.get_next_path_position(), Vector3.UP)
 	
 	if skeleton.global_position.distance_to(player.global_position) > skeleton.detection_radius * 2:
 		transitioned.emit(self, "MinionIdle")

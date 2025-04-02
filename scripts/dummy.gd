@@ -27,6 +27,6 @@ func change_color(part: MeshInstance3D):
 	part.material_override = material # Change to red
 	await get_tree().create_timer(0.25).timeout
 	part.material_override = null # Change it back to normal
-	
+
 func die():
 	queue_free()

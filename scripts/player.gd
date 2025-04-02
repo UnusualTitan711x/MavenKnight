@@ -167,8 +167,6 @@ func reset_attack_sequence():
 
 func take_damage(damage: int):
 	health -= damage
-	
-	print("Player health:", health)
 	anim_tree.get("parameters/playback").travel("Hit")
 
 func die():

@@ -1,0 +1,128 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv0gdcwv7by8g"]
+
+[ext_resource type="Script" uid="uid://bug403b8cljhl" path="res://scripts/death_screen.gd" id="1_dwo6e"]
+[ext_resource type="FontFile" uid="uid://d0knp3x3wf5a5" path="res://assets/WinkySans-VariableFont_wght.ttf" id="2_mqh5l"]
+[ext_resource type="Texture2D" uid="uid://bptv4msw0vma3" path="res://assets/reload.png" id="3_gwety"]
+[ext_resource type="Texture2D" uid="uid://olw6t1rpfjnf" path="res://assets/quit.png" id="4_gwety"]
+[ext_resource type="Texture2D" uid="uid://db052qghxs87w" path="res://assets/cute_skull_white.png" id="5_wtkkp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wfw3d"]
+bg_color = Color(0, 0, 0, 0.176471)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtkkp"]
+bg_color = Color(0, 0, 0, 0.176471)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dwo6e")
+
+[node name="Panel" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.231373)
+metadata/_edit_lock_ = true
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 255.0
+offset_top = 117.0
+offset_right = -255.0
+offset_bottom = -117.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 27.0
+offset_right = 89.0
+offset_bottom = 192.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mqh5l")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_wfw3d")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="Panel2/VBoxContainer/RetryButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -30.5
+offset_right = 31.0
+offset_bottom = 31.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gwety")
+expand_mode = 1
+
+[node name="QuitButton" type="Button" parent="Panel2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 75)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mqh5l")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_wtkkp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect3" type="TextureRect" parent="Panel2/VBoxContainer/QuitButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -31.0
+offset_right = 31.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gwety")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+modulate = Color(0.870129, 0.151415, 4.81307e-07, 1)
+layout_mode = 0
+offset_left = 208.0
+offset_top = 32.0
+offset_right = 416.0
+offset_bottom = 240.0
+texture = ExtResource("5_wtkkp")
+expand_mode = 1
+
+[connection signal="pressed" from="Panel2/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Panel2/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

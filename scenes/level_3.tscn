@@ -1,10 +1,11 @@
-[gd_scene load_steps=156 format=4 uid="uid://sfx14nnamvbe"]
+[gd_scene load_steps=157 format=4 uid="uid://sfx14nnamvbe"]
 
 [ext_resource type="Script" uid="uid://cwym2m08tqky1" path="res://scripts/game_manager.gd" id="1_sx8yt"]
 [ext_resource type="MeshLibrary" uid="uid://c17egdsatt86a" path="res://resources/walls.tres" id="1_uwxec"]
 [ext_resource type="MeshLibrary" uid="uid://d0cxa18iqxx25" path="res://resources/dungeon_floors.tres" id="2_1pn4d"]
 [ext_resource type="PackedScene" uid="uid://cnqbkix8v1o2p" path="res://scenes/pause_menu.tscn" id="2_k5r18"]
 [ext_resource type="PackedScene" uid="uid://byej5l577lyav" path="res://scenes/player.tscn" id="2_uwxec"]
+[ext_resource type="PackedScene" uid="uid://cv0gdcwv7by8g" path="res://scenes/death_screen.tscn" id="3_w5nkq"]
 [ext_resource type="Texture2D" uid="uid://3bsobvp03s8d" path="res://assets/props1_dungeon_game_assets_dungeon_texture.png" id="4_1pn4d"]
 [ext_resource type="Texture2D" uid="uid://0xanhhk7lwou" path="res://scenes/environment/props2_dungeon_game_assets_dungeon_texture.png" id="5_ah8om"]
 [ext_resource type="PackedScene" uid="uid://bfapm8haogmqr" path="res://scenes/chest.tscn" id="6_p6vls"]
@@ -1512,6 +1513,9 @@ shadow_mesh = SubResource("ArrayMesh_7cf4f")
 
 [node name="PauseMenu" parent="UI Layer" instance=ExtResource("2_k5r18")]
 process_mode = 2
+visible = false
+
+[node name="DeathScreen" parent="UI Layer" instance=ExtResource("3_w5nkq")]
 visible = false
 
 [node name="GameManager" type="Node" parent="." groups=["GameManager"]]
