@@ -1318,6 +1318,7 @@ points = PackedVector3Array(0.357499, 0.299903, 0.375008, 0.207514, 0.299903, 0.
 [node name="level_2" type="Node3D"]
 
 [node name="GameManager" type="Node" parent="." groups=["GameManager"]]
+process_mode = 3
 script = ExtResource("1_hey2k")
 
 [node name="UI Layer" type="CanvasLayer" parent="."]

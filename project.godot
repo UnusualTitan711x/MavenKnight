@@ -15,7 +15,7 @@ warnings/check_invalid_track_paths=false
 [application]
 
 config/name="MavenKnight"
-run/main_scene="uid://cdvv3jdflcsy8"
+run/main_scene="uid://sfx14nnamvbe"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

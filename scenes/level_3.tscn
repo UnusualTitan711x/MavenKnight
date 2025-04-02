@@ -1523,7 +1523,7 @@ script = ExtResource("1_sx8yt")
 environment = SubResource("Environment_1pn4d")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+transform = Transform3D(-0.499997, -0.750002, 0.433012, -2.7806e-08, 0.499998, 0.866027, -0.866027, 0.433011, -0.249998, -3, 6, 11)
 light_color = Color(0.990348, 0.94266, 0.903548, 1)
 light_energy = 0.4
 light_angular_distance = 85.69
@@ -1531,7 +1531,7 @@ light_specular = 0.1
 shadow_opacity = 0.8
 
 [node name="Player" parent="." instance=ExtResource("2_uwxec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Podium" parent="." instance=ExtResource("9_ha73p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158, 2.1, -133)
