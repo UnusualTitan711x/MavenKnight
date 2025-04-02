@@ -34,14 +34,14 @@ ground_curve = 0.0348221
 ground_energy_multiplier = 0.1
 sun_angle_max = 0.0
 
-[sub_resource type="Sky" id="Sky_bk4f1"]
+[sub_resource type="Sky" id="Sky_w5nkq"]
 sky_material = SubResource("ProceduralSkyMaterial_w5nkq")
 
 [sub_resource type="Environment" id="Environment_1pn4d"]
 background_mode = 2
 background_color = Color(0.0405764, 0.0681699, 0.167951, 1)
 background_energy_multiplier = 0.9
-sky = SubResource("Sky_bk4f1")
+sky = SubResource("Sky_w5nkq")
 ambient_light_color = Color(1.20327e-07, 0.147696, 0.239314, 1)
 ambient_light_sky_contribution = 0.65
 ambient_light_energy = 0.65
