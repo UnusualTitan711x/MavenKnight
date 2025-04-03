@@ -15,28 +15,22 @@ var paused: bool = false
 var can_pause: bool = true
 
 var silver_keys: int = 0:
-	get:
-		return silver_keys
 	set(value):
 		silver_keys = value
 		if hud:
-			hud.silver_keys_count.text = str(silver_keys).pad_zeros(2)
+			hud.silver_keys_count.text = str(silver_keys)
 
 var gold_keys: int = 0:
-	get:
-		return gold_keys
 	set(value):
 		gold_keys = value
 		if hud:
-			hud.gold_keys_count.text = str(gold_keys).pad_zeros(2)
+			hud.gold_keys_count.text = str(gold_keys)
 
 var keys: int = 0:
-	get:
-		return keys
 	set(value):
 		keys = value
 		if hud:
-			hud.keys_count.text = str(keys).pad_zeros(2)
+			hud.keys_count.text = str(keys)
 
 var enemies_defeated: int = 0:
 	get:
@@ -44,7 +38,7 @@ var enemies_defeated: int = 0:
 	set(value):
 		enemies_defeated = value
 		if hud:
-			hud.enemies_defeated_count.text = str(enemies_defeated).pad_zeros(2)
+			hud.enemies_defeated_count.text = str(enemies_defeated)
 
 func _ready() -> void:
 	can_pause = true

@@ -17,10 +17,10 @@ func _ready() -> void:
 	
 	health_bar.max_value = player.max_health
 	stamina_bar.max_value = player.max_stamina
-	enemies_defeated_count.text = str(manager.enemies_defeated).pad_zeros(2)
-	keys_count.text = str(manager.keys).pad_zeros(2)
-	silver_keys_count.text = str(manager.silver_keys).pad_zeros(2)
-	gold_keys_count.text = str(manager.gold_keys).pad_zeros(2)
+	enemies_defeated_count.text = str(manager.enemies_defeated)
+	keys_count.text = str(manager.keys)
+	silver_keys_count.text = str(manager.silver_keys)
+	gold_keys_count.text = str(manager.gold_keys)
 
 func _process(_delta: float) -> void:
 	health_bar.value = player.health

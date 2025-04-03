@@ -1892,50 +1892,67 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.98503, 1, 44.0894)
 
 [node name="Skeleton3D" parent="Player/Graphics/Kngiht/Rig" index="0"]
-bones/1/position = Vector3(0, 0.390328, 0)
-bones/4/rotation = Quaternion(-0.559345, -0.0604252, -0.643142, 0.519472)
-bones/5/rotation = Quaternion(2.37828e-08, -4.19657e-08, -0.497087, 0.867701)
-bones/7/rotation = Quaternion(-0.321209, -0.326539, 0.146463, 0.876781)
-bones/8/rotation = Quaternion(0.00010654, 0.000106537, -0.706716, 0.707498)
-bones/14/rotation = Quaternion(-0.617681, 0.0803331, 0.617348, 0.480518)
-bones/15/rotation = Quaternion(3.4509e-08, 5.27354e-08, 0.520194, 0.854048)
-bones/17/rotation = Quaternion(-0.319493, 0.301736, -0.228066, 0.86883)
-bones/18/rotation = Quaternion(0.000299223, 0.000352438, 0.706797, 0.707417)
-bones/24/rotation = Quaternion(0.993557, 0.0834973, 0.0741232, 0.0194387)
-bones/25/rotation = Quaternion(0.217729, 6.60523e-08, -1.45894e-07, 0.976009)
-bones/26/rotation = Quaternion(-0.529066, -0.208838, 0.0470113, 0.821137)
-bones/28/rotation = Quaternion(0.996923, -0.0297949, 0.0313662, 0.0653661)
-bones/29/rotation = Quaternion(0.290256, -6.39882e-08, 2.02365e-07, 0.956949)
-bones/30/rotation = Quaternion(-0.567676, 0.114405, -0.0099783, 0.815203)
-bones/47/position = Vector3(0.520841, 0.787219, -0.0576373)
-bones/49/position = Vector3(-0.510844, 0.787219, 0.0597369)
+bones/1/position = Vector3(0, 0.369037, 0)
+bones/1/rotation = Quaternion(-1.11123e-10, 0.0431578, 2.57241e-09, 0.999068)
+bones/4/rotation = Quaternion(-0.550368, -0.0578531, -0.643731, 0.528545)
+bones/5/rotation = Quaternion(1.95183e-08, -7.05929e-08, -0.505711, 0.862703)
+bones/7/rotation = Quaternion(-0.31959, -0.33761, 0.145165, 0.873389)
+bones/8/rotation = Quaternion(0.00136432, 0.00136431, -0.70208, 0.712095)
+bones/14/rotation = Quaternion(-0.609332, 0.0783243, 0.618589, 0.489824)
+bones/15/rotation = Quaternion(2.98912e-08, 5.89752e-08, 0.5285, 0.848933)
+bones/17/rotation = Quaternion(-0.318665, 0.313204, -0.227273, 0.865276)
+bones/18/rotation = Quaternion(0.00414503, 0.00488224, 0.702783, 0.711375)
+bones/21/rotation = Quaternion(-5.80608e-11, -0.0313417, -1.88012e-09, 0.999509)
+bones/24/rotation = Quaternion(0.989519, 0.0837526, 0.0787772, 0.0873546)
+bones/25/rotation = Quaternion(0.39581, 6.38172e-08, -2.65265e-07, 0.918332)
+bones/26/rotation = Quaternion(-0.621923, -0.200778, 0.0768931, 0.752985)
+bones/27/rotation = Quaternion(-9.74065e-09, 0.920355, -0.391084, 7.8309e-08)
+bones/28/rotation = Quaternion(0.991364, -0.0334, 0.0297916, 0.123264)
+bones/29/rotation = Quaternion(0.439849, -5.73958e-08, 3.06337e-07, 0.898072)
+bones/30/rotation = Quaternion(-0.647889, 0.112455, -0.0234362, 0.753024)
+bones/31/rotation = Quaternion(3.03591e-08, 0.920355, -0.391084, -6.95338e-08)
+bones/32/rotation = Quaternion(0.707107, -2.29302e-07, -4.60552e-08, 0.707107)
+bones/33/rotation = Quaternion(-0.707107, -7.05285e-08, -7.05285e-08, 0.707107)
+bones/34/rotation = Quaternion(9.65792e-09, 1.77955e-09, 0.985719, -0.168398)
+bones/35/position = Vector3(-2.60494e-08, 0.213436, -5.1715e-09)
+bones/35/rotation = Quaternion(-1.01273e-07, 0.391084, 0.920355, -3.35091e-08)
+bones/39/rotation = Quaternion(0.707107, -3.82385e-08, 1.45009e-07, 0.707107)
+bones/40/rotation = Quaternion(-0.707107, -7.05285e-08, -7.05285e-08, 0.707107)
+bones/41/rotation = Quaternion(-5.83589e-09, 6.43837e-10, 0.994809, 0.101756)
+bones/42/rotation = Quaternion(-1.05796e-07, 0.391084, 0.920355, -2.58643e-08)
+bones/46/rotation = Quaternion(-0.707107, -7.27951e-08, -7.27951e-08, 0.707107)
+bones/47/position = Vector3(0.520841, 0.76992, -0.0576374)
+bones/47/rotation = Quaternion(0.794627, -1.2666e-07, 0.607098, -5.96046e-08)
+bones/48/rotation = Quaternion(-0.707107, -7.27951e-08, -7.27951e-08, 0.707107)
+bones/49/position = Vector3(-0.510844, 0.76992, 0.0597369)
+bones/49/rotation = Quaternion(0.758253, 1.82539e-07, -0.651961, 1.11759e-08)
 
 [node name="1H_Sword_Offhand" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="0"]
-transform = Transform3D(6.71465e-05, 0.263133, 0.964759, 0.999999, -0.00117299, 0.000251297, 0.00119823, 0.964758, -0.263132, 0.512214, 0.635965, -0.00195222)
+transform = Transform3D(-3.21358e-07, 0.262865, 0.964832, 0.999892, -0.0141636, 0.00386004, 0.0146806, 0.964728, -0.262836, 0.511738, 0.617849, -0.00160899)
 
 [node name="Badge_Shield" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="1"]
-transform = Transform3D(6.71696e-05, 0.263132, 0.964759, 0.999999, -0.00117552, 0.000251964, 0.00120085, 0.964758, -0.263132, 0.662605, 0.636005, -0.0429705)
+transform = Transform3D(-2.98936e-07, 0.262865, 0.964832, 0.999892, -0.0141661, 0.0038607, 0.0146833, 0.964728, -0.262836, 0.662141, 0.618451, -0.0425812)
 
 [node name="Rectangle_Shield" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="2"]
-transform = Transform3D(6.71696e-05, 0.263132, 0.964759, 0.999999, -0.00117552, 0.000251964, 0.00120085, 0.964758, -0.263132, 0.662605, 0.636005, -0.0429705)
+transform = Transform3D(-2.98936e-07, 0.262865, 0.964832, 0.999892, -0.0141661, 0.0038607, 0.0146833, 0.964728, -0.262836, 0.662141, 0.618451, -0.0425812)
 
 [node name="Round_Shield" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="3"]
-transform = Transform3D(6.71696e-05, 0.263132, 0.964759, 0.999999, -0.00117552, 0.000251964, 0.00120085, 0.964758, -0.263132, 0.662605, 0.636005, -0.0429705)
+transform = Transform3D(-2.98936e-07, 0.262865, 0.964832, 0.999892, -0.0141661, 0.0038607, 0.0146833, 0.964728, -0.262836, 0.662141, 0.618451, -0.0425812)
 
 [node name="Spike_Shield" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="4"]
-transform = Transform3D(6.71696e-05, 0.263132, 0.964759, 0.999999, -0.00117552, 0.000251964, 0.00120085, 0.964758, -0.263132, 0.662605, 0.636005, -0.0429705)
+transform = Transform3D(-2.98936e-07, 0.262865, 0.964832, 0.999892, -0.0141661, 0.0038607, 0.0146833, 0.964728, -0.262836, 0.662141, 0.618451, -0.0425812)
 
 [node name="1H_Sword" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="5"]
-transform = Transform3D(-0.000206353, -0.150805, 0.988563, 0.999999, -0.000877108, 7.39642e-05, 0.000856304, 0.988562, 0.150804, -0.496028, 0.640302, 0.13967)
+transform = Transform3D(-0.00292748, -0.162486, 0.986706, 0.999925, -0.0121564, 0.000964035, 0.0118385, 0.986635, 0.162509, -0.495833, 0.622121, 0.139974)
 
 [node name="2H_Sword" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="6"]
-transform = Transform3D(-0.000206369, -0.150805, 0.988563, 0.999999, -0.000877123, 7.39778e-05, 0.000856316, 0.988562, 0.150804, -0.496028, 0.640302, 0.13967)
+transform = Transform3D(-0.0029275, -0.162486, 0.986706, 0.999925, -0.0121564, 0.000964048, 0.0118385, 0.986635, 0.162509, -0.495833, 0.622121, 0.139974)
 
 [node name="Knight_Helmet" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="7"]
-transform = Transform3D(0.99972, -1.40145e-09, 0.0236468, 1.39343e-09, 1, 3.55687e-10, -0.0236468, -3.22638e-10, 0.99972, 4.69869e-07, 1.20056, -1.19779e-07)
+transform = Transform3D(0.99972, -1.40145e-09, 0.0236468, 1.39343e-09, 1, 3.55687e-10, -0.0236468, -3.22638e-10, 0.99972, 4.69869e-07, 1.17927, -1.19779e-07)
 
 [node name="Knight_Cape" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="8"]
-transform = Transform3D(0.996275, -5.14962e-09, 0.0862354, 5.13044e-09, 1, 4.44078e-10, -0.0862354, 1.46374e-15, 0.996275, -1.63022e-08, 1.20056, -1.40136e-07)
+transform = Transform3D(0.996275, -5.14962e-09, 0.0862354, 5.13044e-09, 1, 4.44078e-10, -0.0862354, 1.46374e-15, 0.996275, -1.63022e-08, 1.17927, -1.40136e-07)
 
 [node name="CameraHolder" parent="Player" index="2"]
 transform = Transform3D(-1, -1.0677e-07, -1.0677e-07, 0, 0.707107, -0.707107, 1.50996e-07, -0.707107, -0.707107, -8.44743, 0, 43.0354)

@@ -14,7 +14,7 @@ func on_item_picked():
 		manager.silver_keys += 1
 	if type == lock_type.gold:
 		manager.gold_keys += 1
-	else:
+	elif type == lock_type.normal:
 		manager.keys += 1
 	print("Key added")
 	queue_free()
