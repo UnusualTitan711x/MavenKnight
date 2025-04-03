@@ -58,7 +58,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 5.4
 light_color = Color(0.995892, 0.457116, 1, 1)
 light_energy = 8.569
 light_indirect_energy = 8.186
-spot_range = 8.0
-spot_angle = 28.1905
+spot_range = 6.2
+spot_angle = 28.4072
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
