@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dn4gaw74vjl8s"]
+[gd_scene load_steps=26 format=3 uid="uid://dn4gaw74vjl8s"]
 
 [ext_resource type="MeshLibrary" uid="uid://c17egdsatt86a" path="res://resources/walls.tres" id="1_c13y7"]
 [ext_resource type="PackedScene" uid="uid://b431fwcr7yqrq" path="res://scenes/door.tscn" id="1_cq4me"]
@@ -13,7 +13,6 @@
 [ext_resource type="Script" uid="uid://wu47tefllfay" path="res://scripts/drop_data.gd" id="11_tbcdj"]
 [ext_resource type="PackedScene" uid="uid://ddcdevwsp3ww2" path="res://scenes/heart.tscn" id="12_ej4tf"]
 [ext_resource type="PackedScene" uid="uid://byej5l577lyav" path="res://scenes/player.tscn" id="13_0hilk"]
-[ext_resource type="PackedScene" uid="uid://sfx14nnamvbe" path="res://scenes/level_3.tscn" id="13_dwom6"]
 [ext_resource type="PackedScene" uid="uid://d11a6lsu3dbhw" path="res://scenes/podium.tscn" id="13_ej4tf"]
 [ext_resource type="PackedScene" uid="uid://c6g0nxjyy0ofi" path="res://scenes/hud.tscn" id="15_cmspm"]
 [ext_resource type="PackedScene" uid="uid://cnqbkix8v1o2p" path="res://scenes/pause_menu.tscn" id="16_ikfo1"]
@@ -176,7 +175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.1324, 1.02005, -149.099)
 
 [node name="Podium" parent="." instance=ExtResource("13_ej4tf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.1401, 1.08502, -179.356)
-next_level = ExtResource("13_dwom6")
+next_level_path = "res://scenes/level_3.tscn"
 
 [node name="Keys" type="Node" parent="."]
 

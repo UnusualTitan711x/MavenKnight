@@ -1,8 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://domppxq81hfsm"]
+[gd_scene load_steps=22 format=3 uid="uid://domppxq81hfsm"]
 
 [ext_resource type="MeshLibrary" uid="uid://c17egdsatt86a" path="res://resources/walls.tres" id="1_w2wna"]
 [ext_resource type="PackedScene" uid="uid://d11a6lsu3dbhw" path="res://scenes/podium.tscn" id="1_wcwf6"]
-[ext_resource type="PackedScene" uid="uid://spqxtnad3as8" path="res://scenes/level_6.tscn" id="2_csif5"]
 [ext_resource type="MeshLibrary" uid="uid://d0cxa18iqxx25" path="res://resources/dungeon_floors.tres" id="2_e224s"]
 [ext_resource type="PackedScene" uid="uid://bdswoagl7s718" path="res://scenes/test_enemy_skeleton.tscn" id="2_tbt7t"]
 [ext_resource type="PackedScene" uid="uid://ddcdevwsp3ww2" path="res://scenes/heart.tscn" id="5_tbt7t"]
@@ -51,7 +50,7 @@ glow_enabled = true
 
 [node name="Podium" parent="." instance=ExtResource("1_wcwf6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8666, 1.06719, -279.706)
-next_level = ExtResource("2_csif5")
+next_level_path = "res://scenes/level_6.tscn"
 
 [node name="Enemies" type="Node" parent="."]
 

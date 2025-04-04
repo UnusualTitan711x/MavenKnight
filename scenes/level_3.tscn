@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=4 uid="uid://sfx14nnamvbe"]
+[gd_scene load_steps=158 format=4 uid="uid://sfx14nnamvbe"]
 
 [ext_resource type="Script" uid="uid://cwym2m08tqky1" path="res://scripts/game_manager.gd" id="1_sx8yt"]
 [ext_resource type="MeshLibrary" uid="uid://c17egdsatt86a" path="res://resources/walls.tres" id="1_uwxec"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://0xanhhk7lwou" path="res://scenes/environment/props2_dungeon_game_assets_dungeon_texture.png" id="5_ah8om"]
 [ext_resource type="PackedScene" uid="uid://bfapm8haogmqr" path="res://scenes/chest.tscn" id="6_p6vls"]
 [ext_resource type="Texture2D" uid="uid://dykw50bpg2a41" path="res://assets/banners_dungeon_game_assets_dungeon_texture.png" id="7_hhfj6"]
-[ext_resource type="PackedScene" uid="uid://clr8b7jrsbuji" path="res://scenes/level_4.tscn" id="7_wu3ic"]
 [ext_resource type="PackedScene" uid="uid://dcj5a3yorn2vw" path="res://scenes/chest_gold.tscn" id="8_wae8j"]
 [ext_resource type="PackedScene" uid="uid://d11a6lsu3dbhw" path="res://scenes/podium.tscn" id="9_ha73p"]
 [ext_resource type="PackedScene" uid="uid://djtv00p5cwu4d" path="res://scenes/door_gold.tscn" id="10_8uepa"]
@@ -1541,7 +1540,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Podium" parent="." instance=ExtResource("9_ha73p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158, 2.1, -133)
-next_level = ExtResource("7_wu3ic")
+next_level_path = "res://scenes/level_4.tscn"
 
 [node name="Key" parent="." instance=ExtResource("12_wa6ex")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 3, -66)

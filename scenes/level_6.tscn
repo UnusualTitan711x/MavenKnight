@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://spqxtnad3as8"]
+[gd_scene load_steps=44 format=4 uid="uid://spqxtnad3as8"]
 
 [ext_resource type="MeshLibrary" uid="uid://c17egdsatt86a" path="res://resources/walls.tres" id="1_wg3te"]
 [ext_resource type="MeshLibrary" uid="uid://d0cxa18iqxx25" path="res://resources/dungeon_floors.tres" id="2_hi6ks"]
@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://bdswoagl7s718" path="res://scenes/test_enemy_skeleton.tscn" id="13_adfb8"]
 [ext_resource type="PackedScene" uid="uid://d11a6lsu3dbhw" path="res://scenes/podium.tscn" id="14_lk3oq"]
 [ext_resource type="PackedScene" uid="uid://byej5l577lyav" path="res://scenes/player.tscn" id="19_j7y2l"]
-[ext_resource type="PackedScene" uid="uid://jm5u4alaag31" path="res://scenes/final_scene.tscn" id="21_dx64l"]
 [ext_resource type="Script" uid="uid://cwym2m08tqky1" path="res://scripts/game_manager.gd" id="21_lgfmy"]
 [ext_resource type="PackedScene" uid="uid://c6g0nxjyy0ofi" path="res://scenes/hud.tscn" id="22_5kl8g"]
 [ext_resource type="PackedScene" uid="uid://cnqbkix8v1o2p" path="res://scenes/pause_menu.tscn" id="23_kljjn"]
@@ -343,7 +342,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -2)
 
 [node name="Podium" parent="." instance=ExtResource("14_lk3oq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 1.0458, -31)
-next_level = ExtResource("21_dx64l")
+next_level_path = "res://scenes/final_scene.tscn"
 
 [node name="GameManager" type="Node" parent="." groups=["GameManager"]]
 process_mode = 3
