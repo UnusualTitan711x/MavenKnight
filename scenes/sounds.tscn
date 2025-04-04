@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://cetrwlwssnqxu"]
+
+[ext_resource type="AudioStream" uid="uid://wbn0cxfnpv6y" path="res://assets/sounds/mixkit-video-game-health-recharge-2837.wav" id="1_3iyv6"]
+[ext_resource type="AudioStream" uid="uid://dtx3122we0il2" path="res://assets/sounds/mixkit-winning-a-coin-video-game-2069.wav" id="2_rl5xe"]
+[ext_resource type="AudioStream" uid="uid://b388l5c4w0yqg" path="res://assets/sounds/mixkit-player-losing-or-failing-2042.wav" id="3_p1d1g"]
+[ext_resource type="AudioStream" uid="uid://cdpmq4tksb686" path="res://assets/sounds/grunt2-85989.mp3" id="4_qpfqm"]
+[ext_resource type="AudioStream" uid="uid://b74j6nwr5f77k" path="res://assets/sounds/slap-hurt-pain-sound-effect-262618.mp3" id="5_qac78"]
+[ext_resource type="AudioStream" uid="uid://c03b3ak6sjog6" path="res://assets/sounds/fun-retro-game-175468.mp3" id="6_3iyv6"]
+[ext_resource type="AudioStream" uid="uid://fxo23vnpl1pd" path="res://assets/sounds/monster death.wav" id="6_rl5xe"]
+
+[node name="Sounds" type="Node"]
+
+[node name="HeartPickupSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_3iyv6")
+volume_db = -15.0
+pitch_scale = 0.85
+
+[node name="KeyPickupSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rl5xe")
+volume_db = -15.0
+pitch_scale = 0.85
+
+[node name="PlayerDie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_p1d1g")
+volume_db = -10.0
+pitch_scale = 0.85
+
+[node name="ManHurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qpfqm")
+volume_db = -18.0
+pitch_scale = 0.85
+
+[node name="SkeletonHurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qac78")
+volume_db = -18.0
+pitch_scale = 0.85
+
+[node name="SkeletonDie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rl5xe")
+pitch_scale = 0.85
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3iyv6")
+volume_db = -20.0
+autoplay = true

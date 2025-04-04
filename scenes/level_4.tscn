@@ -1,4 +1,4 @@
-[gd_scene load_steps=195 format=4 uid="uid://clr8b7jrsbuji"]
+[gd_scene load_steps=191 format=4 uid="uid://clr8b7jrsbuji"]
 
 [ext_resource type="MeshLibrary" uid="uid://c17egdsatt86a" path="res://resources/walls.tres" id="1_6malg"]
 [ext_resource type="Texture2D" uid="uid://3bsobvp03s8d" path="res://assets/props1_dungeon_game_assets_dungeon_texture.png" id="1_rbbjd"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://byej5l577lyav" path="res://scenes/player.tscn" id="5_g31h8"]
 [ext_resource type="Texture2D" uid="uid://0xanhhk7lwou" path="res://scenes/environment/props2_dungeon_game_assets_dungeon_texture.png" id="5_wom6i"]
 [ext_resource type="PackedScene" uid="uid://bfapm8haogmqr" path="res://scenes/chest.tscn" id="6_ycko3"]
+[ext_resource type="PackedScene" uid="uid://domppxq81hfsm" path="res://scenes/level_5.tscn" id="7_rg5ri"]
 [ext_resource type="PackedScene" uid="uid://dujj4t7rx2yh8" path="res://scenes/environment/torch_mounted_lit.tscn" id="7_x7blo"]
 [ext_resource type="PackedScene" uid="uid://d11a6lsu3dbhw" path="res://scenes/podium.tscn" id="8_qsmat"]
 [ext_resource type="PackedScene" uid="uid://bdswoagl7s718" path="res://scenes/test_enemy_skeleton.tscn" id="9_yk4f3"]
@@ -22,12 +23,7 @@
 [ext_resource type="Script" uid="uid://cwym2m08tqky1" path="res://scripts/game_manager.gd" id="17_q41qf"]
 [ext_resource type="PackedScene" uid="uid://ub5q7qootrbc" path="res://scenes/key.tscn" id="21_lp0k0"]
 [ext_resource type="PackedScene" uid="uid://btf63opjaj4pk" path="res://scenes/key_silver.tscn" id="22_ifqri"]
-[ext_resource type="AudioStream" uid="uid://wbn0cxfnpv6y" path="res://assets/sounds/mixkit-video-game-health-recharge-2837.wav" id="23_sykev"]
-[ext_resource type="AudioStream" uid="uid://dtx3122we0il2" path="res://assets/sounds/mixkit-winning-a-coin-video-game-2069.wav" id="24_11qgq"]
-[ext_resource type="AudioStream" uid="uid://b388l5c4w0yqg" path="res://assets/sounds/mixkit-player-losing-or-failing-2042.wav" id="25_hgnpj"]
-[ext_resource type="AudioStream" uid="uid://cdpmq4tksb686" path="res://assets/sounds/grunt2-85989.mp3" id="26_5g1ve"]
-[ext_resource type="AudioStream" uid="uid://b74j6nwr5f77k" path="res://assets/sounds/slap-hurt-pain-sound-effect-262618.mp3" id="27_oiyts"]
-[ext_resource type="AudioStream" uid="uid://b4kchdoo8wxjs" path="res://assets/sounds/8-bit-dungeon-251388.mp3" id="28_eopq1"]
+[ext_resource type="PackedScene" uid="uid://cetrwlwssnqxu" path="res://scenes/sounds.tscn" id="23_u7ckc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_s0ibv"]
 sky_top_color = Color(0.617363, 0.113804, 0.904238, 1)
@@ -1898,56 +1894,74 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.98503, 1, 44.0894)
 
 [node name="Skeleton3D" parent="Player/Graphics/Kngiht/Rig" index="0"]
-bones/1/position = Vector3(0, 0.391444, 0)
-bones/4/rotation = Quaternion(-0.559707, -0.060716, -0.643673, 0.518389)
-bones/5/rotation = Quaternion(8.46473e-09, -4.49547e-08, -0.495306, 0.868718)
-bones/7/rotation = Quaternion(-0.321132, -0.325884, 0.146067, 0.877119)
-bones/8/rotation = Quaternion(4.93344e-05, 4.93386e-05, -0.706926, 0.707288)
-bones/14/rotation = Quaternion(-0.618044, 0.0805849, 0.617771, 0.479466)
-bones/15/rotation = Quaternion(2.968e-08, 4.75178e-08, 0.5185, 0.855078)
-bones/17/rotation = Quaternion(-0.319364, 0.300959, -0.227611, 0.869266)
-bones/18/rotation = Quaternion(0.000138562, 0.000163203, 0.706963, 0.70725)
-bones/24/rotation = Quaternion(0.993682, 0.0836551, 0.0736621, 0.0130835)
-bones/25/rotation = Quaternion(0.201221, 6.35494e-08, -1.33229e-07, 0.979546)
-bones/26/rotation = Quaternion(-0.520485, -0.209335, 0.044501, 0.826616)
-bones/28/rotation = Quaternion(0.997226, -0.0295407, 0.0314887, 0.0606243)
-bones/29/rotation = Quaternion(0.27806, -6.33804e-08, 1.95176e-07, 0.960564)
-bones/30/rotation = Quaternion(-0.561193, 0.114488, -0.00896272, 0.81968)
-bones/47/position = Vector3(0.520841, 0.787806, -0.0576373)
-bones/49/position = Vector3(-0.510844, 0.787806, 0.0597369)
+bones/1/position = Vector3(0, 0.391859, 0)
+bones/1/rotation = Quaternion(-1.11123e-10, 0.0431578, 2.57241e-09, 0.999068)
+bones/4/rotation = Quaternion(-0.55984, -0.060826, -0.643875, 0.517981)
+bones/5/rotation = Quaternion(2.33707e-08, -4.76804e-08, -0.494869, 0.868968)
+bones/7/rotation = Quaternion(-0.321087, -0.325506, 0.145839, 0.877314)
+bones/8/rotation = Quaternion(1.63241e-05, 1.63326e-05, -0.707047, 0.707167)
+bones/14/rotation = Quaternion(-0.618178, 0.0806811, 0.617932, 0.479069)
+bones/15/rotation = Quaternion(2.44351e-08, 4.97915e-08, 0.518083, 0.855331)
+bones/17/rotation = Quaternion(-0.319315, 0.300668, -0.227436, 0.869431)
+bones/18/rotation = Quaternion(4.58547e-05, 5.40072e-05, 0.707059, 0.707154)
+bones/21/rotation = Quaternion(-5.80608e-11, -0.0313417, -1.88012e-09, 0.999509)
+bones/24/rotation = Quaternion(0.993707, 0.083699, 0.0735445, 0.0114745)
+bones/25/rotation = Quaternion(0.197045, 6.28753e-08, -1.32298e-07, 0.980395)
+bones/26/rotation = Quaternion(-0.518314, -0.209456, 0.0438716, 0.827982)
+bones/27/rotation = Quaternion(-9.74065e-09, 0.920355, -0.391084, 7.8309e-08)
+bones/28/rotation = Quaternion(0.997298, -0.0294786, 0.0315189, 0.0594506)
+bones/29/rotation = Quaternion(0.275043, -6.35707e-08, 1.93613e-07, 0.961432)
+bones/30/rotation = Quaternion(-0.559589, 0.114507, -0.00871304, 0.820776)
+bones/31/rotation = Quaternion(3.03591e-08, 0.920355, -0.391084, -6.95338e-08)
+bones/32/rotation = Quaternion(0.707107, -2.29302e-07, -4.60552e-08, 0.707107)
+bones/33/rotation = Quaternion(-0.707107, -7.05285e-08, -7.05285e-08, 0.707107)
+bones/34/rotation = Quaternion(9.65792e-09, 1.77955e-09, 0.985719, -0.168398)
+bones/35/position = Vector3(-2.60494e-08, 0.213436, -5.1715e-09)
+bones/35/rotation = Quaternion(-1.01273e-07, 0.391084, 0.920355, -3.35091e-08)
+bones/39/rotation = Quaternion(0.707107, -3.82385e-08, 1.45009e-07, 0.707107)
+bones/40/rotation = Quaternion(-0.707107, -7.05285e-08, -7.05285e-08, 0.707107)
+bones/41/rotation = Quaternion(-5.83589e-09, 6.43837e-10, 0.994809, 0.101756)
+bones/42/rotation = Quaternion(-1.05796e-07, 0.391084, 0.920355, -2.58643e-08)
+bones/46/rotation = Quaternion(-0.707107, -7.27951e-08, -7.27951e-08, 0.707107)
+bones/47/position = Vector3(0.520841, 0.788144, -0.0576373)
+bones/47/rotation = Quaternion(0.794627, -1.2666e-07, 0.607098, -5.96046e-08)
+bones/48/rotation = Quaternion(-0.707107, -7.27951e-08, -7.27951e-08, 0.707107)
+bones/49/position = Vector3(-0.510844, 0.788144, 0.0597369)
+bones/49/rotation = Quaternion(0.758253, 1.82539e-07, -0.651961, 1.11759e-08)
 
 [node name="1H_Sword_Offhand" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="0"]
-transform = Transform3D(-9.1792e-05, 0.263652, 0.964617, 0.999999, -0.000969526, 0.000361063, 0.00103076, 0.964617, -0.263651, 0.512361, 0.636406, -0.0022423)
+transform = Transform3D(-6.18088e-05, 0.263191, 0.964743, 0.999999, -0.000380841, 0.000168937, 0.00041227, 0.964743, -0.26319, 0.512301, 0.6366, -0.00218571)
 
 [node name="Badge_Shield" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="1"]
-transform = Transform3D(-9.17674e-05, 0.263652, 0.964617, 0.999999, -0.000972061, 0.00036173, 0.00103338, 0.964617, -0.263651, 0.662731, 0.636462, -0.0433416)
+transform = Transform3D(-6.17855e-05, 0.26319, 0.964743, 0.999999, -0.000383376, 0.000169604, 0.000414892, 0.964743, -0.26319, 0.66269, 0.636626, -0.0432131)
 
 [node name="Rectangle_Shield" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="2"]
-transform = Transform3D(-9.17674e-05, 0.263652, 0.964617, 0.999999, -0.000972061, 0.00036173, 0.00103338, 0.964617, -0.263651, 0.662731, 0.636462, -0.0433416)
+transform = Transform3D(-6.17855e-05, 0.26319, 0.964743, 0.999999, -0.000383376, 0.000169604, 0.000414892, 0.964743, -0.26319, 0.66269, 0.636626, -0.0432131)
 
 [node name="Round_Shield" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="3"]
-transform = Transform3D(-9.17674e-05, 0.263652, 0.964617, 0.999999, -0.000972061, 0.00036173, 0.00103338, 0.964617, -0.263651, 0.662731, 0.636462, -0.0433416)
+transform = Transform3D(-6.17855e-05, 0.26319, 0.964743, 0.999999, -0.000383376, 0.000169604, 0.000414892, 0.964743, -0.26319, 0.66269, 0.636626, -0.0432131)
 
 [node name="Spike_Shield" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="4"]
-transform = Transform3D(-9.17674e-05, 0.263652, 0.964617, 0.999999, -0.000972061, 0.00036173, 0.00103338, 0.964617, -0.263651, 0.662731, 0.636462, -0.0433416)
+transform = Transform3D(-6.17855e-05, 0.26319, 0.964743, 0.999999, -0.000383376, 0.000169604, 0.000414892, 0.964743, -0.26319, 0.66269, 0.636626, -0.0432131)
 
 [node name="1H_Sword" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="5"]
-transform = Transform3D(7.32124e-05, -0.150724, 0.988575, 0.999999, -0.000773568, -0.000192902, 0.000794196, 0.988575, 0.150724, -0.496195, 0.6407, 0.139406)
+transform = Transform3D(5.2237e-05, -0.150236, 0.98865, 0.999999, -0.000317346, -0.000102018, 0.000329452, 0.988649, 0.150236, -0.496125, 0.640909, 0.139459)
 
 [node name="2H_Sword" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="6"]
-transform = Transform3D(7.31967e-05, -0.150724, 0.988575, 0.999999, -0.000773583, -0.000192888, 0.000794208, 0.988575, 0.150724, -0.496195, 0.6407, 0.139406)
+transform = Transform3D(5.22212e-05, -0.150236, 0.98865, 0.999999, -0.000317361, -0.000102005, 0.000329464, 0.988649, 0.150236, -0.496125, 0.640909, 0.139459)
 
 [node name="Knight_Helmet" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="7"]
-transform = Transform3D(0.99972, -1.40145e-09, 0.0236468, 1.39343e-09, 1, 3.55687e-10, -0.0236468, -3.22638e-10, 0.99972, 4.69869e-07, 1.20167, -1.19779e-07)
+transform = Transform3D(0.99972, -1.40145e-09, 0.0236468, 1.39343e-09, 1, 3.55687e-10, -0.0236468, -3.22638e-10, 0.99972, 4.69869e-07, 1.20209, -1.19779e-07)
 
 [node name="Knight_Cape" parent="Player/Graphics/Kngiht/Rig/Skeleton3D" index="8"]
-transform = Transform3D(0.996275, -5.14962e-09, 0.0862354, 5.13044e-09, 1, 4.44078e-10, -0.0862354, 1.46374e-15, 0.996275, -1.63022e-08, 1.20167, -1.40136e-07)
+transform = Transform3D(0.996275, -5.14962e-09, 0.0862354, 5.13044e-09, 1, 4.44078e-10, -0.0862354, 1.46374e-15, 0.996275, -1.63022e-08, 1.20209, -1.40136e-07)
 
 [node name="CameraHolder" parent="Player" index="2"]
 transform = Transform3D(-1, -1.0677e-07, -1.0677e-07, 0, 0.707107, -0.707107, 1.50996e-07, -0.707107, -0.707107, -8.44743, 0, 43.0354)
 
 [node name="Podium" parent="." instance=ExtResource("8_qsmat")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.098, 1.03706, -29.1937)
+next_level = ExtResource("7_rg5ri")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kqmrt")
@@ -2826,37 +2840,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -106, 
 [node name="door3" parent="Doors" instance=ExtResource("4_py6g0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1, -6)
 
-[node name="Sounds" type="Node" parent="."]
-
-[node name="HeartPickupSFX" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("23_sykev")
-volume_db = -15.0
-pitch_scale = 0.85
-
-[node name="KeyPickupSFX" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("24_11qgq")
-volume_db = -10.0
-pitch_scale = 0.85
-
-[node name="PlayerDie" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("25_hgnpj")
-volume_db = -10.0
-pitch_scale = 0.85
-
-[node name="ManHurt" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("26_5g1ve")
-volume_db = -18.0
-pitch_scale = 0.85
-
-[node name="SkeletonHurt" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("27_oiyts")
-volume_db = -18.0
-pitch_scale = 0.85
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("28_eopq1")
-volume_db = -20.0
-autoplay = true
+[node name="Sounds" parent="." instance=ExtResource("23_u7ckc")]
 
 [editable path="Player"]
 [editable path="Player/Graphics/Kngiht"]

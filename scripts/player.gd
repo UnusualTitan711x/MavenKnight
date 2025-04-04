@@ -174,6 +174,7 @@ func die():
 	dead = true
 	print("Player got died.")
 	anim_tree.get("parameters/playback").travel("Death")
+	manager.play_sound("player_die")
 	
 func handle_stamina_regen(delta: float):
 	if not is_dashing and stamina < max_stamina:

@@ -11,6 +11,7 @@ const PICKUP = preload("res://scenes/heart.tscn")
 func die():
 	skeleton.anim_tree.get("parameters/playback").travel("Death")
 	print("I'm ded")
+	skeleton.manager.play_sound("skeleton_die")
 	collider.disabled = true
 	await get_tree().create_timer(2).timeout
 	skeleton.queue_free()

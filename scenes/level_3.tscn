@@ -1,4 +1,4 @@
-[gd_scene load_steps=163 format=4 uid="uid://sfx14nnamvbe"]
+[gd_scene load_steps=159 format=4 uid="uid://sfx14nnamvbe"]
 
 [ext_resource type="Script" uid="uid://cwym2m08tqky1" path="res://scripts/game_manager.gd" id="1_sx8yt"]
 [ext_resource type="MeshLibrary" uid="uid://c17egdsatt86a" path="res://resources/walls.tres" id="1_uwxec"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://0xanhhk7lwou" path="res://scenes/environment/props2_dungeon_game_assets_dungeon_texture.png" id="5_ah8om"]
 [ext_resource type="PackedScene" uid="uid://bfapm8haogmqr" path="res://scenes/chest.tscn" id="6_p6vls"]
 [ext_resource type="Texture2D" uid="uid://dykw50bpg2a41" path="res://assets/banners_dungeon_game_assets_dungeon_texture.png" id="7_hhfj6"]
+[ext_resource type="PackedScene" uid="uid://clr8b7jrsbuji" path="res://scenes/level_4.tscn" id="7_wu3ic"]
 [ext_resource type="PackedScene" uid="uid://dcj5a3yorn2vw" path="res://scenes/chest_gold.tscn" id="8_wae8j"]
 [ext_resource type="PackedScene" uid="uid://d11a6lsu3dbhw" path="res://scenes/podium.tscn" id="9_ha73p"]
 [ext_resource type="PackedScene" uid="uid://djtv00p5cwu4d" path="res://scenes/door_gold.tscn" id="10_8uepa"]
@@ -23,12 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://btf63opjaj4pk" path="res://scenes/key_silver.tscn" id="18_vv2vh"]
 [ext_resource type="PackedScene" uid="uid://c6g0nxjyy0ofi" path="res://scenes/hud.tscn" id="19_q7pjq"]
 [ext_resource type="PackedScene" uid="uid://dujj4t7rx2yh8" path="res://scenes/environment/torch_mounted_lit.tscn" id="23_w5nkq"]
-[ext_resource type="AudioStream" uid="uid://wbn0cxfnpv6y" path="res://assets/sounds/mixkit-video-game-health-recharge-2837.wav" id="24_1rxxv"]
-[ext_resource type="AudioStream" uid="uid://dtx3122we0il2" path="res://assets/sounds/mixkit-winning-a-coin-video-game-2069.wav" id="25_ld1e4"]
-[ext_resource type="AudioStream" uid="uid://b388l5c4w0yqg" path="res://assets/sounds/mixkit-player-losing-or-failing-2042.wav" id="26_detxl"]
-[ext_resource type="AudioStream" uid="uid://cdpmq4tksb686" path="res://assets/sounds/grunt2-85989.mp3" id="27_58p72"]
-[ext_resource type="AudioStream" uid="uid://b74j6nwr5f77k" path="res://assets/sounds/slap-hurt-pain-sound-effect-262618.mp3" id="28_365g5"]
-[ext_resource type="AudioStream" uid="uid://b4kchdoo8wxjs" path="res://assets/sounds/8-bit-dungeon-251388.mp3" id="29_50287"]
+[ext_resource type="PackedScene" uid="uid://cetrwlwssnqxu" path="res://scenes/sounds.tscn" id="24_bk4f1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5nkq"]
 sky_top_color = Color(0.617363, 0.113804, 0.904238, 1)
@@ -40,14 +36,14 @@ ground_curve = 0.0348221
 ground_energy_multiplier = 0.1
 sun_angle_max = 0.0
 
-[sub_resource type="Sky" id="Sky_w5nkq"]
+[sub_resource type="Sky" id="Sky_bk4f1"]
 sky_material = SubResource("ProceduralSkyMaterial_w5nkq")
 
 [sub_resource type="Environment" id="Environment_1pn4d"]
 background_mode = 2
 background_color = Color(0.0405764, 0.0681699, 0.167951, 1)
 background_energy_multiplier = 0.9
-sky = SubResource("Sky_w5nkq")
+sky = SubResource("Sky_bk4f1")
 ambient_light_color = Color(1.20327e-07, 0.147696, 0.239314, 1)
 ambient_light_sky_contribution = 0.65
 ambient_light_energy = 0.65
@@ -1545,6 +1541,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Podium" parent="." instance=ExtResource("9_ha73p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158, 2.1, -133)
+next_level = ExtResource("7_wu3ic")
 
 [node name="Key" parent="." instance=ExtResource("12_wa6ex")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 3, -66)
@@ -2373,34 +2370,4 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -62, 2
 [node name="door5" parent="Doors" instance=ExtResource("11_q7pjq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 2, -118)
 
-[node name="Sounds" type="Node" parent="."]
-
-[node name="HeartPickupSFX" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("24_1rxxv")
-volume_db = -15.0
-pitch_scale = 0.85
-
-[node name="KeyPickupSFX" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("25_ld1e4")
-volume_db = -10.0
-pitch_scale = 0.85
-
-[node name="PlayerDie" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("26_detxl")
-volume_db = -10.0
-pitch_scale = 0.85
-
-[node name="ManHurt" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("27_58p72")
-volume_db = -18.0
-pitch_scale = 0.85
-
-[node name="SkeletonHurt" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("28_365g5")
-volume_db = -18.0
-pitch_scale = 0.85
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("29_50287")
-volume_db = -20.0
-autoplay = true
+[node name="Sounds" parent="." instance=ExtResource("24_bk4f1")]

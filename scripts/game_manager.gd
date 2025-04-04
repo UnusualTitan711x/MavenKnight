@@ -86,3 +86,5 @@ func play_sound(name: String):
 		$"../Sounds/SkeletonHurt".play()
 	elif name == "player_die":
 		$"../Sounds/PlayerDie".play()
+	elif name == "skeleton_die":
+		$"../Sounds/SkeletonDie".play()
