@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=4 uid="uid://sfx14nnamvbe"]
+[gd_scene load_steps=163 format=4 uid="uid://sfx14nnamvbe"]
 
 [ext_resource type="Script" uid="uid://cwym2m08tqky1" path="res://scripts/game_manager.gd" id="1_sx8yt"]
 [ext_resource type="MeshLibrary" uid="uid://c17egdsatt86a" path="res://resources/walls.tres" id="1_uwxec"]
@@ -23,6 +23,12 @@
 [ext_resource type="PackedScene" uid="uid://btf63opjaj4pk" path="res://scenes/key_silver.tscn" id="18_vv2vh"]
 [ext_resource type="PackedScene" uid="uid://c6g0nxjyy0ofi" path="res://scenes/hud.tscn" id="19_q7pjq"]
 [ext_resource type="PackedScene" uid="uid://dujj4t7rx2yh8" path="res://scenes/environment/torch_mounted_lit.tscn" id="23_w5nkq"]
+[ext_resource type="AudioStream" uid="uid://wbn0cxfnpv6y" path="res://assets/sounds/mixkit-video-game-health-recharge-2837.wav" id="24_1rxxv"]
+[ext_resource type="AudioStream" uid="uid://dtx3122we0il2" path="res://assets/sounds/mixkit-winning-a-coin-video-game-2069.wav" id="25_ld1e4"]
+[ext_resource type="AudioStream" uid="uid://b388l5c4w0yqg" path="res://assets/sounds/mixkit-player-losing-or-failing-2042.wav" id="26_detxl"]
+[ext_resource type="AudioStream" uid="uid://cdpmq4tksb686" path="res://assets/sounds/grunt2-85989.mp3" id="27_58p72"]
+[ext_resource type="AudioStream" uid="uid://b74j6nwr5f77k" path="res://assets/sounds/slap-hurt-pain-sound-effect-262618.mp3" id="28_365g5"]
+[ext_resource type="AudioStream" uid="uid://b4kchdoo8wxjs" path="res://assets/sounds/8-bit-dungeon-251388.mp3" id="29_50287"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5nkq"]
 sky_top_color = Color(0.617363, 0.113804, 0.904238, 1)
@@ -2366,3 +2372,35 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -62, 2
 
 [node name="door5" parent="Doors" instance=ExtResource("11_q7pjq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 2, -118)
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="HeartPickupSFX" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("24_1rxxv")
+volume_db = -15.0
+pitch_scale = 0.85
+
+[node name="KeyPickupSFX" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("25_ld1e4")
+volume_db = -10.0
+pitch_scale = 0.85
+
+[node name="PlayerDie" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("26_detxl")
+volume_db = -10.0
+pitch_scale = 0.85
+
+[node name="ManHurt" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("27_58p72")
+volume_db = -18.0
+pitch_scale = 0.85
+
+[node name="SkeletonHurt" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("28_365g5")
+volume_db = -18.0
+pitch_scale = 0.85
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("29_50287")
+volume_db = -20.0
+autoplay = true
