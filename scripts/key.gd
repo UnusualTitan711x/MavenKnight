@@ -17,4 +17,5 @@ func on_item_picked():
 	elif type == lock_type.normal:
 		manager.keys += 1
 	print("Key added")
+	player.manager.play_sound("key")
 	queue_free()

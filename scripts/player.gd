@@ -5,7 +5,7 @@ class_name Player
 @onready var anim_tree: AnimationTree = $Graphics/Kngiht/AnimationTree
 @onready var hud: HUD = $"../UI Layer/HUD"
 
-var manager
+var manager: GameManager
 
 @export var max_health = 20
 @export var max_stamina = 20
@@ -168,6 +168,7 @@ func reset_attack_sequence():
 func take_damage(damage: int):
 	health -= damage
 	anim_tree.get("parameters/playback").travel("Hit")
+	manager.play_sound("man_hurt")
 
 func die():
 	dead = true

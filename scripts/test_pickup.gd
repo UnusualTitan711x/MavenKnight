@@ -11,7 +11,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if body is Player:
 		on_item_picked()
-		queue_free()
+
 
 func on_item_picked():
 	pass

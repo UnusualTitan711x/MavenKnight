@@ -6,6 +6,7 @@ class_name GameManager
 @onready var pause_menu: Control = $"../UI Layer/PauseMenu"
 @onready var hud: HUD = $"../UI Layer/HUD"
 @onready var death_screen: Control = $"../UI Layer/DeathScreen"
+@onready var heart_pickup_sfx: AudioStreamPlayer = $"../Sounds/HeartPickupSFX"
 
 var player: Player
 var enemies: Array[Node]
@@ -73,3 +74,15 @@ func resume_game():
 	get_tree().paused = false
 	paused = false
 	pause_menu.hide()
+
+func play_sound(name: String):
+	if name == "heart":
+		$"../Sounds/HeartPickupSFX".play()
+	elif name == "key":
+		$"../Sounds/KeyPickupSFX".play()
+	elif name == "man_hurt":
+		$"../Sounds/ManHurt".play()
+	elif name == "skeleton_hurt":
+		$"../Sounds/SkeletonHurt".play()
+	elif name == "player_die":
+		$"../Sounds/PlayerDie".play()

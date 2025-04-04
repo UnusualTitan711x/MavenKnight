@@ -33,7 +33,8 @@ func _process(_delta: float) -> void:
 
 func take_damage(damage: int):
 	health -= damage
-
+	manager.play_sound("skeleton_hurt")
+	
 	if parts:
 		for part in parts:
 			change_color(part)
